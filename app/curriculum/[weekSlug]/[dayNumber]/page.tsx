@@ -1,22 +1,66 @@
+"use client";
+
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import {
+  getDayNote,
+  isDayComplete,
+  markDayComplete,
+  markDayIncomplete,
+  setDayNote,
+} from "@/lib/storage";
 import curriculum from "@/data/curriculum.json";
 import type { Curriculum } from "@/lib/types";
 
 const data = curriculum as Curriculum;
 
-export default async function DayDetailPage({
-  params,
-}: {
-  params: Promise<{ weekSlug: string; dayNumber: string }>;
-}) {
-  const { weekSlug, dayNumber } = await params;
+export default function DayDetailPage() {
+  const params = useParams<{ weekSlug: string; dayNumber: string }>();
+  const weekSlug = params?.weekSlug;
+  const dayNumber = params?.dayNumber;
   const week = data.weeks.find((w) => w.slug === weekSlug);
   const dayNum = Number(dayNumber);
   const day = week?.days.find((d) => d.dayNumber === dayNum);
 
+  const [mounted, setMounted] = useState(false);
+  const [isDone, setIsDone] = useState(false);
+  const [note, setNote] = useState("");
+  const [savedFlash, setSavedFlash] = useState(false);
+  const savedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (!day) return;
+    setIsDone(isDayComplete(day.dayNumber));
+    setNote(getDayNote(day.dayNumber));
+    setMounted(true);
+    return () => {
+      if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
+    };
+  }, [day?.dayNumber]);
+
   if (!week || !day) {
     notFound();
+  }
+
+  function handleNoteBlur() {
+    if (!day) return;
+    setDayNote(day.dayNumber, note);
+    setSavedFlash(true);
+    if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
+    savedTimerRef.current = setTimeout(() => setSavedFlash(false), 2000);
+  }
+
+  function handleMarkComplete() {
+    if (!day) return;
+    markDayComplete(day.dayNumber);
+    setIsDone(true);
+  }
+
+  function handleUndo() {
+    if (!day) return;
+    markDayIncomplete(day.dayNumber);
+    setIsDone(false);
   }
 
   return (
@@ -230,6 +274,67 @@ export default async function DayDetailPage({
           <p className="mt-2 text-sm text-text sm:text-base">{day.artifact}</p>
         </section>
       )}
+
+      <section className="mt-8 border-t border-border pt-8">
+        <div className="flex items-center gap-3">
+          <label
+            htmlFor="day-notes"
+            className="text-xs font-medium uppercase tracking-wider text-muted"
+          >
+            Notes (private, saved to your browser)
+          </label>
+          <span
+            aria-live="polite"
+            className={
+              "text-xs text-accent transition-opacity duration-200 " +
+              (savedFlash ? "opacity-100" : "opacity-0")
+            }
+          >
+            Saved
+          </span>
+        </div>
+        <textarea
+          id="day-notes"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          onBlur={handleNoteBlur}
+          placeholder="Jot down what you learned, blockers, questions..."
+          rows={5}
+          className="mt-3 w-full rounded-xl border border-border bg-surface p-4 text-sm text-text placeholder:text-muted focus:border-accent focus:outline-none"
+        />
+      </section>
+
+      <section className="mt-8">
+        <div className="mx-auto max-w-[400px]">
+          {!mounted ? (
+            <div
+              aria-hidden
+              className="h-12 w-full rounded-xl border border-border bg-surface"
+            />
+          ) : isDone ? (
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex h-12 w-full items-center justify-center rounded-xl border border-accent/60 bg-accent/10 px-4 text-sm font-medium text-accent sm:text-base">
+                Day Complete ✓
+              </div>
+              <button
+                type="button"
+                onClick={handleUndo}
+                className="text-xs text-muted underline-offset-2 hover:text-text hover:underline"
+              >
+                Undo
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={handleMarkComplete}
+              className="flex h-12 w-full items-center justify-center rounded-xl bg-accent px-4 text-sm font-semibold text-bg transition-colors hover:bg-accent-hover sm:text-base"
+            >
+              Mark Day Complete
+            </button>
+          )}
+        </div>
+      </section>
     </div>
   );
 }
