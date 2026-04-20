@@ -25,6 +25,7 @@ export default function DayDetailPage() {
 
   const [mounted, setMounted] = useState(false);
   const [isDone, setIsDone] = useState(false);
+  const [currentDayNumber, setCurrentDayNumber] = useState<number | null>(null);
   const [note, setNote] = useState("");
   const [savedFlash, setSavedFlash] = useState(false);
   const savedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -33,6 +34,19 @@ export default function DayDetailPage() {
     if (!day) return;
     setIsDone(isDayComplete(day.dayNumber));
     setNote(getDayNote(day.dayNumber));
+
+    let found: number | null = null;
+    for (const w of data.weeks) {
+      for (const d of w.days) {
+        if (!isDayComplete(d.dayNumber)) {
+          found = d.dayNumber;
+          break;
+        }
+      }
+      if (found !== null) break;
+    }
+    setCurrentDayNumber(found);
+
     setMounted(true);
     return () => {
       if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
@@ -42,6 +56,12 @@ export default function DayDetailPage() {
   if (!week || !day) {
     notFound();
   }
+
+  const locked =
+    mounted &&
+    !isDone &&
+    currentDayNumber !== null &&
+    day.dayNumber !== currentDayNumber;
 
   function handleNoteBlur() {
     if (!day) return;
@@ -89,6 +109,17 @@ export default function DayDetailPage() {
         </span>
       </nav>
 
+      {locked && (
+        <div
+          role="status"
+          className="mt-6 rounded-xl border border-border bg-surface px-4 py-3 text-sm text-muted"
+        >
+          <span className="font-medium text-text">Locked.</span>{" "}
+          Complete Day {day.dayNumber - 1} first to unlock this day&apos;s full
+          content.
+        </div>
+      )}
+
       {(day.phase || day.weekMission) && (
         <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
           {day.phase && (
@@ -123,6 +154,8 @@ export default function DayDetailPage() {
         <p className="mt-2 text-sm text-text sm:text-base">{day.objective}</p>
       </section>
 
+      {!locked && (
+      <>
       {day.learningOutcome && day.learningOutcome.length > 0 && (
         <section className="mt-8">
           <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
@@ -352,6 +385,8 @@ export default function DayDetailPage() {
           )}
         </div>
       </section>
+      </>
+      )}
     </div>
   );
 }
