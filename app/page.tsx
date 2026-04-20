@@ -1,10 +1,46 @@
-const stats = [
-  { label: "Current day", value: "0", suffix: "/ 90" },
-  { label: "Streak", value: "0", suffix: "days" },
-  { label: "Progress", value: "0", suffix: "%" },
-];
+"use client";
+
+import { useEffect, useState } from "react";
+import {
+  getCompletedCount,
+  getCurrentStreak,
+} from "@/lib/storage";
+import curriculum from "@/data/curriculum.json";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  const [completed, setCompleted] = useState(0);
+  const [streak, setStreak] = useState(0);
+
+  useEffect(() => {
+    setCompleted(getCompletedCount());
+    setStreak(getCurrentStreak());
+    setMounted(true);
+  }, []);
+
+  const totalDays = curriculum.totalDays;
+  const currentDay = Math.min(completed + 1, totalDays);
+  const progressPercent =
+    totalDays === 0 ? 0 : Math.round((completed / totalDays) * 100);
+
+  const stats = [
+    {
+      label: "Current day",
+      value: mounted ? String(currentDay) : "—",
+      suffix: `/ ${totalDays}`,
+    },
+    {
+      label: "Streak",
+      value: mounted ? String(streak) : "—",
+      suffix: streak === 1 ? "day" : "days",
+    },
+    {
+      label: "Progress",
+      value: mounted ? String(progressPercent) : "—",
+      suffix: "%",
+    },
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
       <header className="mb-8 sm:mb-12">

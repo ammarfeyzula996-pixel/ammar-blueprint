@@ -1,34 +1,9 @@
 import Link from "next/link";
-import type { Day } from "@/lib/types";
+import { notFound } from "next/navigation";
+import curriculum from "@/data/curriculum.json";
+import type { Curriculum } from "@/lib/types";
 
-const sampleDay: Day = {
-  dayNumber: 1,
-  title: "Define your ICP in one sentence",
-  objective:
-    "Write a single sentence that names exactly who you sell to. If it takes two sentences, you do not have an ICP yet.",
-  estimatedMinutes: 45,
-  videos: [
-    {
-      title: "How to Pick a Niche in 2026",
-      creator: "Nick Saraev",
-      url: "https://www.youtube.com/@nicksaraev",
-      durationMinutes: 22,
-      keyTimestamps: [
-        "2:10-6:40 why most beginners pick badly",
-        "11:30-18:05 the one-sentence test",
-      ],
-    },
-  ],
-  tasks: [
-    "List 10 types of companies you could sell to",
-    "Cross out anything outside Western English B2B SaaS",
-    "Score remaining options on pain, budget, and access",
-    "Pick one and write the one-sentence ICP",
-  ],
-  reflectionPrompt:
-    "If a stranger asked what you do in one sentence, would your ICP sentence be the answer?",
-  artifact: "One sentence ICP, written in a plain text file or note",
-};
+const data = curriculum as Curriculum;
 
 export default async function DayDetailPage({
   params,
@@ -36,15 +11,21 @@ export default async function DayDetailPage({
   params: Promise<{ weekSlug: string; dayNumber: string }>;
 }) {
   const { weekSlug, dayNumber } = await params;
-  const day = sampleDay;
+  const week = data.weeks.find((w) => w.slug === weekSlug);
+  const dayNum = Number(dayNumber);
+  const day = week?.days.find((d) => d.dayNumber === dayNum);
+
+  if (!week || !day) {
+    notFound();
+  }
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
       <Link
-        href="/curriculum"
+        href={`/curriculum/${week.slug}`}
         className="text-sm text-muted transition-colors hover:text-text"
       >
-        ← Curriculum
+        ← Week {week.number}: {week.title}
       </Link>
 
       {(day.phase || day.weekMission) && (
@@ -61,7 +42,7 @@ export default async function DayDetailPage({
       )}
 
       <p className="mt-6 text-xs font-medium uppercase tracking-wider text-muted">
-        Week {weekSlug} · Day {dayNumber}
+        Week {week.number} · Day {day.dayNumber}
       </p>
       <h1 className="mt-2 text-2xl font-semibold tracking-tight text-text sm:text-3xl">
         {day.title}

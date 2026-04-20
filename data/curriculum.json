@@ -1,0 +1,532 @@
+{
+  "title": "90 Days to First Paying AI Automation Client",
+  "totalDays": 90,
+  "weeks": [
+    {
+      "slug": "week-0-positioning",
+      "number": 0,
+      "title": "Positioning and Setup",
+      "summary": "Before any tools, you lock who you sell to, what you sell, for how much, and where you show up. Seven days of foundation work that every subsequent week depends on.",
+      "theme": "Foundation before tools",
+      "days": [
+        {
+          "dayNumber": 1,
+          "title": "Define your ICP in one sentence",
+          "phase": "Foundation",
+          "weekMission": "Have a positioned offer, ready to sell, by end of Week 0",
+          "hook": "You are going to spend the next 89 days building, selling, and delivering. Every single day. If your ICP is wrong, all 89 of those days produce waste. Two hours today saves you two months later. This is the highest-leverage single hour of the entire program.",
+          "objective": "Write a single sentence that names exactly who you sell to. If it takes two sentences, you do not have an ICP yet.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "State in one sentence who you serve and what problem you solve",
+            "Verify your ICP passes the Specific, Verifiable, Painful test",
+            "List 20 real companies that match it by name"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Before watching any videos, take 10 minutes and write, messily, no editing, answers to these questions in a scratch doc. Do not research. Write your gut answer. You will compare to Nick Saraev's frameworks after.",
+            "prompts": [
+              "Who am I pissed on behalf of? Whose problem makes me think someone should fix this?",
+              "What industry or company type do I understand better than most people because of SmartClick plus LEORON plus my outreach reps?",
+              "If I had to pick only one type of company to sell to for the rest of 2026, who would it be?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "How to Pick a Niche for your AI Automation Agency in 2025",
+              "creator": "Nick Saraev",
+              "url": "https://www.youtube.com/watch?v=xwZW4hzTVZQ",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Watch all of it at 1.25x speed",
+                "Focus on the 3 qualifiers he names for a good niche"
+              ]
+            },
+            {
+              "title": "The 3 Best Niches For AI Automation Agencies",
+              "creator": "Nick Saraev",
+              "url": "https://www.youtube.com/watch?v=8HL0IwuuqMQ",
+              "durationMinutes": 18,
+              "keyTimestamps": [
+                "First 8 minutes only - the what makes a good niche framework",
+                "Stop when he starts listing the 3 niches, you already know SaaS is one"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 45,
+            "steps": [
+              "Write your ICP using this template, filling each bracket: I help [SIZE] [INDUSTRY] companies [SPECIFIC PAINFUL PROBLEM] by [SPECIFIC AUTOMATION SOLUTION].",
+              "Run the 3-part test and write YES or NO next to each: Specific - replace your ICP with 'businesses', still make sense? If yes, too vague. Verifiable - can I find 100 of them on LinkedIn in 5 minutes? Painful - would they pay $2K+ to solve the problem I named?",
+              "Compress the sentence to 10 words maximum. If you cannot, refine.",
+              "Save as ICP.md in your ammar-blueprint folder."
+            ]
+          },
+          "tasks": [
+            "ICP.md saved with final sentence",
+            "Sentence passes Specific, Verifiable, Painful test",
+            "Compresses to 10 words or fewer"
+          ],
+          "stretchGoals": [
+            "List 20 companies that match your ICP exactly using LinkedIn and Apollo free tier",
+            "For 5 of those, find the founder or head of GTM LinkedIn profile. Save as target-accounts-v1.md"
+          ],
+          "completionCriteria": [
+            "ICP.md file exists in project folder",
+            "Three-part test passed",
+            "Sentence is 10 words or fewer"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 1 of my 90-day AI automation build. Here is who I am building for: [your ICP sentence]. Documenting everything at ammar-blueprint.vercel.app",
+            "optional": true
+          },
+          "reflectionPrompt": "If someone asked me at a dinner party who do you help, could I answer in one breath, without notes, and have them say oh I know someone like that? If not, what word is missing from my ICP?",
+          "artifact": "ICP.md"
+        },
+        {
+          "dayNumber": 2,
+          "title": "Design your offer and lock the price",
+          "phase": "Foundation",
+          "weekMission": "Have a positioned offer, ready to sell, by end of Week 0",
+          "hook": "Most AI automation freelancers fail here. They have vague offers like I build AI automations and they quote hourly. You are going to name one specific thing you sell, at one specific price, for one specific outcome. Clarity wins deals. Vagueness loses them. Nick Saraev and his community do not pitch I can build automations. They pitch specific systems: $4K email infrastructure setup. $3,800/month retainer for automated lead qualification. $8K retainer for full outbound engine. Named offer. Named price.",
+          "objective": "Turn who you sell to into what you sell, at what price, for what outcome. One productized offer with three tiers.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Name your productized offer in one sentence with a price tag attached",
+            "Defend the price based on value delivered, not hours worked",
+            "Articulate the 30-90 day outcome the buyer gets"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Answer in your scratch doc, no research.",
+            "prompts": [
+              "Looking at your ICP, what is the most expensive human problem they have that is within your skill reach?",
+              "If you had to guess their monthly waste from that problem in dollars, what is the number?",
+              "If your offer would save them 10x what it costs, what is the ceiling on your price?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "How I Onboard AI Automation Agency Retainer Clients",
+              "creator": "Nick Saraev",
+              "url": "https://www.youtube.com/watch?v=THHnEiOnm1M",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus: how he positions retainers, not just one-off builds",
+                "Watch at 1.25x"
+              ]
+            },
+            {
+              "title": "How I Hit $25K/mo Selling Automation Services (Roadmap and Guide)",
+              "creator": "Nick Saraev",
+              "url": "https://www.youtube.com/results?search_query=nick+saraev+25k+month+selling+automation+services+roadmap",
+              "durationMinutes": 90,
+              "keyTimestamps": [
+                "30:00-55:00 for pricing anchors",
+                "Skip the intro and niche sections"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 60,
+            "steps": [
+              "Create OFFER.md in your project folder.",
+              "Write section 'What I sell': one sentence, named system plus target outcome.",
+              "Write section 'Who it is for': copy your ICP from Day 1, no edits.",
+              "Write section 'The outcome': what the buyer has in 30 days that they did not have before.",
+              "Write section 'Price anchor' with three tiers: Tier 1 Audit $500-750 one-time, Tier 2 Setup Sprint $2,500-3,500 one-time, Tier 3 Retainer $1,500-2,500 per month with 3-month minimum.",
+              "Write section 'Why this price' with 3-5 bullets using value language, not hours language.",
+              "Write section 'Who this is NOT for' with at least 3 exclusions."
+            ]
+          },
+          "tasks": [
+            "OFFER.md saved in project folder",
+            "Three price tiers defined with actual dollar amounts",
+            "Why this price uses value language not hours language",
+            "Who this is NOT for has at least 3 real exclusions"
+          ],
+          "stretchGoals": [
+            "Calculate the ROI math: if their problem costs $X per month, your fix pays back in N months. Turn it into a simple sentence you could say on a cold call.",
+            "Draft a 3-bullet FAQ: What if it breaks? What if we do not have the integrations? Can I cancel the retainer?"
+          ],
+          "completionCriteria": [
+            "OFFER.md exists with all required sections",
+            "Can read OFFER.md aloud in under 90 seconds",
+            "Would make a SaaS founder say tell me more"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 2 of my 90-day AI automation build. Offer locked. [one sentence describing what you sell]. Pricing starts at $[X]. Send me a DM if you are a B2B SaaS founder bleeding on [specific pain].",
+            "optional": true
+          },
+          "reflectionPrompt": "If a founder said that is too expensive, would I defend the price or discount it? If I would discount, my price is not anchored in real value yet. What proof do I need to stop flinching at price objections?",
+          "artifact": "OFFER.md"
+        },
+        {
+          "dayNumber": 3,
+          "title": "Upwork profile overhaul",
+          "phase": "Foundation",
+          "weekMission": "Have a positioned offer, ready to sell, by end of Week 0",
+          "hook": "In 2026, Upwork's algorithm rewards specificity. Niche profiles get 75% more invitations than generalist ones. The freelancers at $100 per hour have 2 things in common: one clearly-named specialty plus 3-5 embedded keywords that match what clients search. You are not competing with 2 million freelancers. You are competing with the handful who have optimized their profile for your exact niche. Today you become one of them.",
+          "objective": "Ship a live Upwork profile that someone looking for YOUR offer would hire on first view.",
+          "estimatedMinutes": 180,
+          "learningOutcome": [
+            "Describe your Upwork profile angle in one sentence without hedging",
+            "Point to the exact 5 keywords clients will use to find you",
+            "Ship a live profile that reflects your offer and positioning"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Go to Upwork. Search for 3 job postings that match your ICP. Reverse-engineer what wins before writing your profile.",
+            "prompts": [
+              "Search 'AI automation' plus 'SaaS' - copy the exact job title and 5 most-used phrases",
+              "Search 'n8n' plus 'B2B' - same",
+              "Search 'lead generation automation' - same, then click the top 3 bidders' profiles and note their angles"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Upwork Account Guide: Expert Steps for Success in 2026",
+              "creator": "Getmany (read article)",
+              "url": "https://getmany.com/blog/upwork-account-guide-expert-steps-for-success-in-2026",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Focus on profile SEO and keyword density sections"
+              ]
+            },
+            {
+              "title": "Upwork profile optimization for AI automation freelancers (search YouTube)",
+              "creator": "Search YouTube 2026 videos",
+              "url": "https://www.youtube.com/results?search_query=upwork+profile+optimization+2026+AI+automation+freelancer",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Pick the newest video with 50K+ views"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "Rebuild your Upwork profile title (headline, 70 char max): outcome verb plus ICP plus specific mechanism. Example: I build AI lead-routing systems for B2B SaaS teams bleeding on response time.",
+              "Set hourly rate to $50-75 minimum. Low rates filter for low-quality buyers.",
+              "Rewrite Overview (1,500-2,000 chars): outcome opening line, who you help, what you build, proof including GitHub and ammar-blueprint.vercel.app plus SmartClick B2B SaaS experience, who it is NOT for, CTA offering a free 2-minute Loom audit.",
+              "Update Skills to 10-15 niche-specific: n8n, Make.com, AI Workflow Automation, Lead Scoring, Apollo, Instantly, Cold Email Infrastructure, CRM Integration, OpenAI API, Claude API, SaaS Sales Operations.",
+              "Add Portfolio: ammar-blueprint.vercel.app and GitHub profile link."
+            ]
+          },
+          "tasks": [
+            "New headline published",
+            "Hourly rate set to $50+",
+            "Overview rewritten and live",
+            "Skills updated to 10-15 niche-specific set",
+            "Portfolio has at least 2 pieces"
+          ],
+          "stretchGoals": [
+            "Record and upload a 60-90 second Loom video intro",
+            "Add a Specialized Profile for AI Automation",
+            "Take Upwork free skill tests in n8n, automation, or API integration to earn badges"
+          ],
+          "completionCriteria": [
+            "Profile is live and public on Upwork",
+            "Could send your profile link to a SaaS founder and feel proud, not apologetic"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 3 of 90. Upwork profile live as an AI automation specialist for B2B SaaS. If you know a SaaS founder with a broken lead flow, introduce us.",
+            "optional": true
+          },
+          "reflectionPrompt": "If a buyer landed on my profile right now and had to decide in 10 seconds whether I am their guy, what single sentence would convince them? Is that sentence in my headline?",
+          "artifact": "Live Upwork profile"
+        },
+        {
+          "dayNumber": 4,
+          "title": "LinkedIn alignment and first content piece",
+          "phase": "Foundation",
+          "weekMission": "Have a positioned offer, ready to sell, by end of Week 0",
+          "hook": "When a Western B2B SaaS founder sees your Upwork bid, their next move is to Google you. They will find your LinkedIn. If it says SDR at SmartClick with no mention of AI automation, they will assume you are learning on their dime. Today you align LinkedIn so it backs up your Upwork positioning WITHOUT creating conflict with your actual SmartClick role. SmartClick sells SEO/AEO/GEO. Your side offer builds AI automation. Different lanes. No conflict.",
+          "objective": "Ship an aligned LinkedIn profile plus one public post that demonstrates your skill.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Show up on LinkedIn as B2B SaaS outbound specialist who builds AI automation",
+            "Write 1 post that demonstrates your skill publicly",
+            "Name the 3 content pillars you will repeat every week"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Screenshot your current LinkedIn profile. You will compare before and after tonight.",
+            "prompts": [
+              "What is my current headline?",
+              "What is the first thing a visitor sees above the fold?",
+              "If a founder clicked my profile tomorrow, would they get why I am worth a call?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Justin Welsh LinkedIn Operating System (free newsletter archive)",
+              "creator": "Justin Welsh",
+              "url": "https://www.justinwelsh.me/",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Skim his posts tagged LinkedIn",
+                "Focus on headline formula, featured section, and 3-pillar content strategy"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Update headline formula: [what I do] | [who I help] | [proof or unique angle]. Example: Building AI automation systems for B2B SaaS | B2B outbound specialist | Public builder at ammar-blueprint.vercel.app",
+              "Rewrite About section: hook, who you help, what you build, proof and background, current bet (the 90-day build), CTA.",
+              "Pin 3 items to Featured section: ammar-blueprint.vercel.app, GitHub profile, and your first post from step 4.",
+              "Write and publish your first content post using the hook formula: Line 1 specific claim or contrarian view, Line 2-3 why it matters, Line 4-7 framework or insight, Line 8 what you are doing about it.",
+              "Save CONTENT_PILLARS.md with 3 pillars: Build in public (3 posts/week), Teach the niche (2 posts/week), Opinion or contrarian takes (1 post/week)."
+            ]
+          },
+          "tasks": [
+            "Headline updated",
+            "About section rewritten",
+            "First post published",
+            "CONTENT_PILLARS.md saved"
+          ],
+          "stretchGoals": [
+            "Connect to 10 new B2B SaaS founders via Sales Navigator free trial or LinkedIn search",
+            "Turn on Creator Mode",
+            "Draft the next 3 posts in LinkedIn drafts, scheduled for the week"
+          ],
+          "completionCriteria": [
+            "LinkedIn profile passes the could this person plausibly charge $2-5K for AI automation work sniff test",
+            "First post is live and public"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Already fulfilled by publishing your first post today.",
+            "optional": false
+          },
+          "reflectionPrompt": "Reading my old headline and my new headline back-to-back, which version would I hire? Why?",
+          "artifact": "Live LinkedIn profile + first published post + CONTENT_PILLARS.md"
+        },
+        {
+          "dayNumber": 5,
+          "title": "GitHub portfolio and public README",
+          "phase": "Foundation",
+          "weekMission": "Have a positioned offer, ready to sell, by end of Week 0",
+          "hook": "A Western B2B SaaS founder evaluating you will check: Upwork (done Day 3), LinkedIn (done Day 4), GitHub (today). If GitHub shows an empty profile or a single repo with no README, you look like a hobbyist. If it shows 2-3 public repos with clean READMEs, you look like a builder. Your ammar-blueprint repo is live. Today you turn it into a proper public portfolio piece.",
+          "objective": "Transform your GitHub from a scratchpad into a portfolio link you can paste into any proposal.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Describe what ammar-blueprint is in a public README a stranger can understand",
+            "Have a GitHub profile page that signals professional builder",
+            "Own a portfolio link you can paste into any proposal"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Visit 3 top n8n or automation freelancers' GitHub profiles. Find them via Upwork, Twitter, or n8n creators list. Pattern-match the structure.",
+            "prompts": [
+              "What do their pinned repos look like?",
+              "Do they have a profile README? What does it say?",
+              "Is there a bio line and contact info?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Managing your GitHub profile README (official docs)",
+              "creator": "GitHub Docs",
+              "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme",
+              "durationMinutes": 10,
+              "keyTimestamps": [
+                "Read the whole thing, it is short"
+              ]
+            },
+            {
+              "title": "Best GitHub profile README examples 2026 (search YouTube)",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=github+profile+readme+best+examples+2026",
+              "durationMinutes": 10,
+              "keyTimestamps": [
+                "Pick any 10-min video, get visual ideas"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Improve ammar-blueprint/README.md: what this is, live site URL, stack, 90-day goal, progress checklist, why public, contact info. Commit and push.",
+              "Create a new public repo on GitHub with your username as both the owner and repo name. Initialize with README.",
+              "Write profile README: your name plus one-sentence positioning, location, languages, current role, what you do outside SmartClick, current 90-day public build with link, stack, contact links.",
+              "Pin ammar-blueprint to your GitHub profile via 'Customize your pins'.",
+              "Test the URL in incognito mode. See what a stranger sees."
+            ]
+          },
+          "tasks": [
+            "ammar-blueprint/README.md updated and pushed",
+            "GitHub profile README created",
+            "ammar-blueprint pinned to profile",
+            "Profile URL tested in incognito"
+          ],
+          "stretchGoals": [
+            "Add 2 more small public repos: a simple n8n workflow template as JSON, or a cold email template you have built",
+            "Add GitHub stats cards to your profile README (search 'github readme stats' for free widgets)"
+          ],
+          "completionCriteria": [
+            "A stranger landing on your GitHub profile for the first time can say in 5 seconds 'this person builds AI automation'"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 5 of 90. My GitHub profile is now a portfolio, not a graveyard. [your URL]",
+            "optional": true
+          },
+          "reflectionPrompt": "If an engineer at a B2B SaaS company saw my GitHub, would they think I am serious or hobbying? What one thing would double the credibility signal?",
+          "artifact": "Public GitHub profile + improved ammar-blueprint README"
+        },
+        {
+          "dayNumber": 6,
+          "title": "First 10 target accounts and 3 DMs drafted",
+          "phase": "Foundation",
+          "weekMission": "Have a positioned offer, ready to sell, by end of Week 0",
+          "hook": "You are a trained SDR. You know a cold pipeline takes 2-3 weeks to warm up. By drafting your first 10 target accounts today, you give Claude Code, your portfolio, and your LinkedIn posts time to mature BEFORE you contact these prospects. When you do reach out in Week 5, your profile will show 5 weeks of public building, making you look established, not desperate.",
+          "objective": "Research 10 ICP-matched target accounts and draft 3 personalized DMs, held for Week 5 outreach.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Find 10 ICP-matched B2B SaaS companies with named decision-makers",
+            "Draft 3 personalized DMs tailored to each prospect's specific pain",
+            "Know the difference between relevant and warm prospects"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Answer in scratch doc.",
+            "prompts": [
+              "Which ICP signals are visible on LinkedIn? Examples: hiring SDR, fundraising announcement, head of sales left.",
+              "What would make me KNOW a prospect has the problem my offer solves?",
+              "Which of my languages might give me an unfair edge on any of these?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Apollo free guide to B2B prospecting with signals",
+              "creator": "Apollo",
+              "url": "https://www.apollo.io/learn",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Focus on signal-based prospecting section"
+              ]
+            },
+            {
+              "title": "How to find clients on LinkedIn for AI agencies (search)",
+              "creator": "Nick Saraev or similar",
+              "url": "https://www.youtube.com/results?search_query=nick+saraev+find+clients+linkedin+ai+automation",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Pick the highest-viewed relevant video"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Open a Google Sheet called TARGETS_V1. Columns: Rank, Company, ARR est, Founder/Head of GTM, LinkedIn URL, Signal, Specific Pain, Language edge.",
+              "Fill 10 rows from sources: LinkedIn search for Head of Sales plus SaaS plus US/UK/Netherlands, Apollo free tier filtered by industry/size/geography, X/Twitter follows of B2B SaaS founders, Crunchbase recent Series A/B SaaS.",
+              "Rank 1-10 by fit. Rank 1 is perfect match. Rank 10 is plausible match.",
+              "Draft 3 DMs in DRAFT_DMS.md for ranks 1, 2, 3. Structure: Line 1 specific observation about them (their post, hire, product, NOT generic flattery), Line 2 question tied to pain you solve, Line 3 soft offer (free Loom audit, not paid pitch).",
+              "DO NOT send today. They go in the outbox for Week 5."
+            ]
+          },
+          "tasks": [
+            "10 companies in TARGETS_V1 sheet with all columns filled",
+            "Each row has: named founder, LinkedIn URL, specific signal, pain hypothesis",
+            "3 drafted DMs saved in DRAFT_DMS.md",
+            "DMs are observation-based, not template-feeling"
+          ],
+          "stretchGoals": [
+            "Expand to 25 targets",
+            "Add a column: Free Loom audit idea with one specific system you would build for each",
+            "Screenshot the 3 companies' tech stacks from BuiltWith or Wappalyzer"
+          ],
+          "completionCriteria": [
+            "If a friend read your DM drafts blind, they could NOT tell you copy-pasted a template"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 6 of 90. 10 target accounts researched. 3 personal DMs drafted. Sending in Week 5. Until then, I am building.",
+            "optional": true
+          },
+          "reflectionPrompt": "Out of my 10 targets, which ONE would I sacrifice pricing to land? That is my whale. What do I know about them that nobody else pitching them knows?",
+          "artifact": "TARGETS_V1 sheet + DRAFT_DMS.md"
+        },
+        {
+          "dayNumber": 7,
+          "title": "Week 0 review plus human sanity check",
+          "phase": "Foundation",
+          "weekMission": "Have a positioned offer, ready to sell, by end of Week 0",
+          "hook": "You have spent 6 days writing an ICP, offer, profile, content, and target list. It all sounds great to YOU because you wrote it. But you are not your buyer. Today you hand the work to someone and watch them react, before you invest Week 1 into building technical skills around the wrong positioning.",
+          "objective": "Ship your Week 0 artifacts to one human reviewer, receive feedback, and revise the weakest item before Week 1.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Receive critical feedback without defending",
+            "Identify which Week 0 output needs revision before Week 1",
+            "Commit to Week 1 with real conviction, not just hope"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Pick your reviewer, ranked by signal quality.",
+            "prompts": [
+              "Option 1: Milan or Boris at SmartClick - best signal since they sell to similar ICPs",
+              "Option 2: A former LEORON colleague - knows B2B sales, knows you",
+              "Option 3: A trusted friend who runs a business - outside view, still commercial",
+              "Option 4: Reddit r/Entrepreneur post - least personal, most anonymous"
+            ]
+          },
+          "videos": [
+            {
+              "title": "How to get feedback on your product (Rob Walling or Justin Jackson)",
+              "creator": "Search any B2B SaaS feedback framework article",
+              "url": "https://www.google.com/search?q=rob+walling+how+to+get+feedback+on+your+product",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Key concepts: people lie politely, 'would you buy this' is worthless, 'what would stop you from buying this' is gold"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Create WEEK_0_REVIEW_PACK.md in your project. Include: ICP sentence, Offer summary condensed to half a page, LinkedIn headline + About, Upwork profile URL, 3 drafted DMs.",
+              "Add at the top: I am not asking you to cheer me on. I am asking: if a SaaS founder landed on each of these, what is the ONE thing that would stop them from replying or booking a call?",
+              "Call or message your reviewer. Share the pack. Ask these questions in order: Read the offer, in your own words what am I selling? Look at the Upwork profile, on a scale of 1-10 how serious do I look? Read the 3 DMs, would you reply to any of them and why? What is missing?",
+              "Write feedback verbatim in WEEK_0_FEEDBACK.md.",
+              "Revise the 1-2 weakest items based on feedback. Do NOT rewrite everything. Pick the highest-leverage fix and ship today."
+            ]
+          },
+          "tasks": [
+            "One human has reviewed the Week 0 pack",
+            "Feedback written verbatim in WEEK_0_FEEDBACK.md",
+            "At least one Week 0 artifact has been revised based on feedback"
+          ],
+          "stretchGoals": [
+            "Get feedback from 2 reviewers, not 1",
+            "Record a 15-min Loom walkthrough of your Week 0 work and share on X or LinkedIn",
+            "Write a Week 0 retrospective post: what I built, what surprised me, what is next"
+          ],
+          "completionCriteria": [
+            "You can answer YES to: if my target prospect saw my Upwork/LinkedIn/GitHub today, they would take me seriously as an AI automation consultant"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Week 0 complete. ICP, offer, profiles, portfolio, target list - all shipped. Week 1 starts Monday: learning n8n. Track it at ammar-blueprint.vercel.app.",
+            "optional": true
+          },
+          "reflectionPrompt": "Looking back at 7 days of work, what surprised me? What did I resist writing because it felt too specific or too exposed? That resistance is usually the signal - the specific scary thing is the RIGHT thing.",
+          "artifact": "WEEK_0_REVIEW_PACK.md + WEEK_0_FEEDBACK.md + revised weakest item"
+        }
+      ]
+    },
+    {
+      "slug": "week-1-n8n-foundations",
+      "number": 1,
+      "title": "n8n Foundations",
+      "summary": "Coming soon. The curriculum consultant will deliver Week 1 content before you complete Week 0.",
+      "theme": "Build your first real automation",
+      "days": []
+    }
+  ]
+}

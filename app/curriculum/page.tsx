@@ -1,10 +1,29 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Curriculum — Ammar Blueprint",
-};
+import { useEffect, useState } from "react";
+import WeekCard from "@/components/WeekCard";
+import { isDayComplete } from "@/lib/storage";
+import curriculum from "@/data/curriculum.json";
+import type { Curriculum } from "@/lib/types";
+
+const data = curriculum as Curriculum;
 
 export default function CurriculumPage() {
+  const [mounted, setMounted] = useState(false);
+  const [completedByWeek, setCompletedByWeek] = useState<Record<string, number>>(
+    {},
+  );
+
+  useEffect(() => {
+    const counts: Record<string, number> = {};
+    for (const week of data.weeks) {
+      counts[week.slug] = week.days.filter((d) => isDayComplete(d.dayNumber))
+        .length;
+    }
+    setCompletedByWeek(counts);
+    setMounted(true);
+  }, []);
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
       <header className="mb-8 sm:mb-12">
@@ -12,17 +31,22 @@ export default function CurriculumPage() {
           Curriculum
         </h1>
         <p className="mt-2 text-sm text-muted sm:text-base">
-          12 weeks, 90 days, one paying client at the end.
+          {data.title}
         </p>
       </header>
 
-      <div className="rounded-xl border border-dashed border-border bg-surface p-8 text-center sm:p-12">
-        <p className="text-sm font-medium text-text sm:text-base">
-          Curriculum content coming in Session 2.
-        </p>
-        <p className="mt-2 text-sm text-muted">
-          The 12-week structure will load from a JSON file. No database needed.
-        </p>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+        {data.weeks.map((week) => (
+          <WeekCard
+            key={week.slug}
+            slug={week.slug}
+            number={week.number}
+            title={week.title}
+            theme={week.theme}
+            totalDays={week.days.length}
+            completedDays={mounted ? completedByWeek[week.slug] ?? 0 : 0}
+          />
+        ))}
       </div>
     </div>
   );
