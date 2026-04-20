@@ -47,6 +47,19 @@ export default async function DayDetailPage({
         ← Curriculum
       </Link>
 
+      {(day.phase || day.weekMission) && (
+        <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+          {day.phase && (
+            <span className="inline-flex w-fit items-center rounded-full border border-border bg-surface px-2.5 py-0.5 text-xs font-medium uppercase tracking-wider text-muted">
+              {day.phase}
+            </span>
+          )}
+          {day.weekMission && (
+            <p className="text-xs text-muted sm:text-sm">{day.weekMission}</p>
+          )}
+        </div>
+      )}
+
       <p className="mt-6 text-xs font-medium uppercase tracking-wider text-muted">
         Week {weekSlug} · Day {dayNumber}
       </p>
@@ -55,6 +68,12 @@ export default async function DayDetailPage({
       </h1>
       <p className="mt-2 text-sm text-muted">~{day.estimatedMinutes} min</p>
 
+      {day.hook && (
+        <p className="mt-6 border-l-2 border-accent pl-4 text-base text-text sm:text-lg">
+          {day.hook}
+        </p>
+      )}
+
       <section className="mt-8">
         <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
           Objective
@@ -62,8 +81,39 @@ export default async function DayDetailPage({
         <p className="mt-2 text-sm text-text sm:text-base">{day.objective}</p>
       </section>
 
-      {day.videos.length > 0 && (
+      {day.learningOutcome && day.learningOutcome.length > 0 && (
         <section className="mt-8">
+          <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
+            By end of day you can
+          </h2>
+          <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-text sm:text-base">
+            {day.learningOutcome.map((outcome, i) => (
+              <li key={i}>{outcome}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {day.preWork && (
+        <section className="mt-8 border-t border-border pt-8">
+          <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
+            Pre-work · ~{day.preWork.estimatedMinutes} min
+          </h2>
+          <p className="mt-2 text-sm text-text sm:text-base">
+            {day.preWork.instructions}
+          </p>
+          {day.preWork.prompts && day.preWork.prompts.length > 0 && (
+            <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-text">
+              {day.preWork.prompts.map((prompt, i) => (
+                <li key={i}>{prompt}</li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
+      {day.videos.length > 0 && (
+        <section className="mt-8 border-t border-border pt-8">
           <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
             Videos
           </h2>
@@ -97,9 +147,22 @@ export default async function DayDetailPage({
         </section>
       )}
 
-      <section className="mt-8">
+      {day.guidedPractice && (
+        <section className="mt-8 border-t border-border pt-8">
+          <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
+            Guided practice · ~{day.guidedPractice.estimatedMinutes} min
+          </h2>
+          <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-text sm:text-base">
+            {day.guidedPractice.steps.map((step, i) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      <section className="mt-8 border-t border-border pt-8">
         <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
-          Tasks
+          Minimum viable completion
         </h2>
         <ul className="mt-3 space-y-2">
           {day.tasks.map((task, i) => (
@@ -113,8 +176,62 @@ export default async function DayDetailPage({
         </ul>
       </section>
 
-      {day.reflectionPrompt && (
+      {day.stretchGoals && day.stretchGoals.length > 0 && (
         <section className="mt-8">
+          <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
+            Stretch goals
+          </h2>
+          <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-text">
+            {day.stretchGoals.map((goal, i) => (
+              <li key={i}>{goal}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {day.completionCriteria && day.completionCriteria.length > 0 && (
+        <section className="mt-8">
+          <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
+            Today is done when
+          </h2>
+          <ul className="mt-3 space-y-2">
+            {day.completionCriteria.map((criterion, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 rounded-lg border border-border bg-surface px-4 py-3 text-sm text-text"
+              >
+                <span
+                  aria-hidden
+                  className="mt-0.5 inline-block h-4 w-4 flex-shrink-0 rounded border border-border"
+                />
+                <span>{criterion}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {day.publicCommitment && (
+        <section className="mt-8">
+          <div className="rounded-xl border border-accent/40 bg-accent/5 p-5">
+            <p className="text-xs font-medium uppercase tracking-wider text-accent">
+              Public commitment
+              {day.publicCommitment.optional && (
+                <span className="ml-2 text-muted">(optional)</span>
+              )}
+            </p>
+            <p className="mt-2 text-sm text-muted">
+              Post on {day.publicCommitment.platform}
+            </p>
+            <p className="mt-3 whitespace-pre-wrap rounded-lg border border-border bg-surface p-4 text-sm text-text">
+              {day.publicCommitment.template}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {day.reflectionPrompt && (
+        <section className="mt-8 border-t border-border pt-8">
           <h2 className="text-xs font-medium uppercase tracking-wider text-muted">
             Reflection
           </h2>

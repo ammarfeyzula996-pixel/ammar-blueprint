@@ -22,6 +22,26 @@ export type Day = {
   tasks: string[];
   artifact?: string;
   reflectionPrompt?: string;
+  phase?: string;
+  weekMission?: string;
+  hook?: string;
+  learningOutcome?: string[];
+  preWork?: {
+    estimatedMinutes: number;
+    instructions: string;
+    prompts?: string[];
+  };
+  guidedPractice?: {
+    estimatedMinutes: number;
+    steps: string[];
+  };
+  publicCommitment?: {
+    platform: string;
+    template: string;
+    optional: boolean;
+  };
+  stretchGoals?: string[];
+  completionCriteria?: string[];
 };
 
 export type Video = {
