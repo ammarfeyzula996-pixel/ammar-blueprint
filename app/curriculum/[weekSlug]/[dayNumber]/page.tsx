@@ -65,12 +65,29 @@ export default function DayDetailPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
-      <Link
-        href={`/curriculum/${week.slug}`}
-        className="text-sm text-muted transition-colors hover:text-text"
-      >
-        ← Week {week.number}: {week.title}
-      </Link>
+      <nav aria-label="Breadcrumb" className="text-sm">
+        <Link
+          href="/curriculum"
+          className="text-muted transition-colors hover:text-text"
+        >
+          Curriculum
+        </Link>
+        <span className="mx-2 text-muted" aria-hidden>
+          /
+        </span>
+        <Link
+          href={`/curriculum/${week.slug}`}
+          className="text-muted transition-colors hover:text-text"
+        >
+          Week {week.number}
+        </Link>
+        <span className="mx-2 text-muted" aria-hidden>
+          /
+        </span>
+        <span className="text-text">
+          Day {day.dayNumber}: {day.title}
+        </span>
+      </nav>
 
       {(day.phase || day.weekMission) && (
         <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">

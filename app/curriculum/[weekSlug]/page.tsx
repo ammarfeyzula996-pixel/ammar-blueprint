@@ -57,12 +57,20 @@ export default function WeekDetailPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
-      <Link
-        href="/curriculum"
-        className="text-sm text-muted transition-colors hover:text-text"
-      >
-        ← Curriculum
-      </Link>
+      <nav aria-label="Breadcrumb" className="text-sm">
+        <Link
+          href="/curriculum"
+          className="text-muted transition-colors hover:text-text"
+        >
+          Curriculum
+        </Link>
+        <span className="mx-2 text-muted" aria-hidden>
+          /
+        </span>
+        <span className="text-text">
+          Week {week.number}: {week.title}
+        </span>
+      </nav>
 
       <p className="mt-6 text-xs font-medium uppercase tracking-wider text-muted">
         Week {week.number} · {week.theme}
