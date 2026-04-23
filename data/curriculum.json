@@ -196,7 +196,7 @@
               ]
             },
             {
-              "title": "Upwork profile optimization for AI automation freelancers (search YouTube)",
+              "title": "Upwork profile optimization for AI automation freelancers",
               "creator": "Search YouTube 2026 videos",
               "url": "https://www.youtube.com/results?search_query=upwork+profile+optimization+2026+AI+automation+freelancer",
               "durationMinutes": 20,
@@ -263,7 +263,7 @@
           },
           "videos": [
             {
-              "title": "Justin Welsh LinkedIn Operating System (free newsletter archive)",
+              "title": "Justin Welsh LinkedIn Operating System",
               "creator": "Justin Welsh",
               "url": "https://www.justinwelsh.me/",
               "durationMinutes": 20,
@@ -339,7 +339,7 @@
               ]
             },
             {
-              "title": "Best GitHub profile README examples 2026 (search YouTube)",
+              "title": "Best GitHub profile README examples 2026",
               "creator": "Search YouTube",
               "url": "https://www.youtube.com/results?search_query=github+profile+readme+best+examples+2026",
               "durationMinutes": 10,
@@ -412,7 +412,7 @@
               ]
             },
             {
-              "title": "How to find clients on LinkedIn for AI agencies (search)",
+              "title": "How to find clients on LinkedIn for AI agencies",
               "creator": "Nick Saraev or similar",
               "url": "https://www.youtube.com/results?search_query=nick+saraev+find+clients+linkedin+ai+automation",
               "durationMinutes": 20,
@@ -478,8 +478,8 @@
           },
           "videos": [
             {
-              "title": "How to get feedback on your product (Rob Walling or Justin Jackson)",
-              "creator": "Search any B2B SaaS feedback framework article",
+              "title": "How to get feedback on your product",
+              "creator": "Rob Walling or Justin Jackson",
               "url": "https://www.google.com/search?q=rob+walling+how+to+get+feedback+on+your+product",
               "durationMinutes": 15,
               "keyTimestamps": [
@@ -524,8 +524,1466 @@
       "slug": "week-1-n8n-foundations",
       "number": 1,
       "title": "n8n Foundations",
-      "summary": "Coming soon. The curriculum consultant will deliver Week 1 content before you complete Week 0.",
-      "theme": "Build your first real automation",
+      "summary": "Learn what n8n is, install it, and build your first 3 real workflows. By end of week, you have a working automation that solves a real problem, not a toy tutorial. n8n is your primary automation platform for the rest of the program.",
+      "theme": "From zero to first working automation",
+      "days": [
+        {
+          "dayNumber": 8,
+          "title": "What n8n is and why it wins in 2026",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first 3 real n8n workflows",
+          "hook": "You spent Week 0 on positioning. That work is worthless without a tool that delivers the outcome you promised. n8n is the tool. Today you understand why n8n (not Make, not Zapier) is the right choice for building AI automation for B2B SaaS in 2026. You will not touch a single workflow today. Understanding comes before doing.",
+          "objective": "Understand what n8n is, how it is architected, and why it is the right primary tool for your positioning.",
+          "estimatedMinutes": 90,
+          "learningOutcome": [
+            "Explain what n8n is in one sentence to a non-technical founder",
+            "Name the 3 reasons n8n wins over Make or Zapier for AI automation work",
+            "Decide between self-hosted and n8n cloud based on your situation"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Before any videos, write your current understanding in a scratch doc. No research.",
+            "prompts": [
+              "What do I think n8n does? (one sentence, guess)",
+              "If I had to pick Zapier, Make, or n8n for my offer, which would I pick and why?",
+              "What is the ONE question about n8n I want answered today?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "N8n Tutorial for Beginners 2026: Part 1 - Build Your First AI Workflow",
+              "creator": "n8n Official Community",
+              "url": "https://community.n8n.io/t/n8n-tutorial-for-beginners-2026-part-1-build-your-first-ai-workflow/261168",
+              "durationMinutes": 25,
+              "keyTimestamps": [
+                "Watch the overview sections only today, not the build",
+                "Focus on what n8n is and how nodes work"
+              ]
+            },
+            {
+              "title": "Make.com vs n8n in 2025 (and 2026)",
+              "creator": "Nick Saraev",
+              "url": "https://www.youtube.com/results?search_query=nick+saraev+make+vs+n8n",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "His honest head-to-head, biased slightly toward n8n for AI work",
+                "Match his reasoning against your own offer"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 30,
+            "steps": [
+              "Write N8N_DECISION.md in your project folder.",
+              "Section 1: one-sentence definition of n8n in your own words.",
+              "Section 2: 3 bullets on why n8n wins for AI automation work (cite sources).",
+              "Section 3: self-hosted vs cloud decision, with your pick and reasoning. For Week 1, recommend starting with n8n cloud free trial - zero setup friction, you switch to self-hosted later if retainers justify the infrastructure time.",
+              "Section 4: the ONE concern you still have about n8n."
+            ]
+          },
+          "tasks": [
+            "N8N_DECISION.md saved with all 4 sections",
+            "Picked cloud vs self-hosted with justification",
+            "Identified your ONE open concern"
+          ],
+          "stretchGoals": [
+            "Sign up for n8n cloud free trial (do not build yet, just get the account)",
+            "Read the n8n docs homepage (10 min)",
+            "Join the n8n Discord or community forum"
+          ],
+          "completionCriteria": [
+            "Can explain n8n in one sentence without notes",
+            "Know whether you are using cloud or self-hosted for Week 1"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 8 of 90. Picked n8n as my automation platform for AI work. Reason: [your reason in 10 words]. Why not [alternative]? [one sentence]. Building in public at ammar-blueprint.vercel.app",
+            "optional": true
+          },
+          "reflectionPrompt": "If I had to pitch n8n to a SaaS founder in 60 seconds, what is the single strongest reason? Is that reason something my ICP would actually value, or something I as a builder value?",
+          "artifact": "N8N_DECISION.md"
+        },
+        {
+          "dayNumber": 9,
+          "title": "Install n8n and meet the interface",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first 3 real n8n workflows",
+          "hook": "You understand n8n conceptually. Today you meet it hands-on. No building yet, just orientation. Think of it like learning a kitchen before you cook. Where are the knives, where is the stove, where is the trash. Tomorrow you cook.",
+          "objective": "Have n8n running and be able to navigate its interface comfortably.",
+          "estimatedMinutes": 90,
+          "learningOutcome": [
+            "Access n8n from your browser",
+            "Identify the 5 core interface elements: canvas, node panel, execution log, workflow list, settings",
+            "Understand what nodes are and how they connect"
+          ],
+          "preWork": {
+            "estimatedMinutes": 5,
+            "instructions": "Clear your desk, close other browser tabs, pick one 90-minute block. This is hands-on work.",
+            "prompts": [
+              "What time am I doing this? (put it in your calendar)",
+              "What is my n8n cloud account email? (have it ready)"
+            ]
+          },
+          "videos": [
+            {
+              "title": "How to Set Up Your First n8n Automation: A Complete Beginner's Guide 2026",
+              "creator": "AI Tool Clinic",
+              "url": "https://aitoolclinic.com/how-to-set-up-your-first-n8n-automation-a-complete-beginners-guide-2026/",
+              "durationMinutes": 30,
+              "keyTimestamps": [
+                "Focus on setup + interface sections",
+                "Skip the Gmail-to-Slack build for today, just orientation"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 45,
+            "steps": [
+              "Sign up for n8n cloud free trial at n8n.io (if you did this as stretch yesterday, skip).",
+              "Log in. Take a screenshot of the empty dashboard.",
+              "Click 'Add workflow'. You are now on the canvas. Do not build, just look.",
+              "Click 'Add first step'. The node picker opens. Scroll through node categories: Triggers, Actions, AI, Data Transformation, Flow.",
+              "Close the node picker without adding anything. Click any empty canvas area.",
+              "Open the left sidebar. Find: Workflows, Credentials, Executions, Templates.",
+              "Open a public template from the Templates page (any template). Read through its nodes. Do not activate.",
+              "Go back to your empty workflow.",
+              "Save INTERFACE_NOTES.md in your project folder with: the 5 most important UI elements you noticed and what each does."
+            ]
+          },
+          "tasks": [
+            "n8n cloud account active",
+            "Navigated the canvas, node picker, and sidebar",
+            "Explored one public template",
+            "INTERFACE_NOTES.md saved"
+          ],
+          "stretchGoals": [
+            "Browse 10 templates in the Templates section, note 3 you want to adapt later",
+            "Read n8n docs: 'Understand n8n' section (10 min)"
+          ],
+          "completionCriteria": [
+            "Can find: canvas, node picker, workflow list, execution log, credentials section",
+            "Feel comfortable clicking around without fear of breaking anything"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 9 of 90. n8n installed and running. Tomorrow I build my first workflow. Documenting the journey from SDR to AI automation builder at ammar-blueprint.vercel.app",
+            "optional": true
+          },
+          "reflectionPrompt": "What surprised me about n8n? What feels more intuitive than I expected, and what feels more complex? The honest answer here tells me where to spend time next.",
+          "artifact": "Live n8n cloud account + INTERFACE_NOTES.md"
+        },
+        {
+          "dayNumber": 10,
+          "title": "Your first workflow: triggers and actions",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first 3 real n8n workflows",
+          "hook": "Today you build. Not a toy tutorial where you follow someone else's clicks and learn nothing. A simple, real workflow that does one thing well: triggers on a schedule and sends you a Slack or email message. If your future client asks 'can you automate something that runs every Monday morning?' - the answer becomes yes after today.",
+          "objective": "Build, test, and activate your first working n8n workflow with a trigger and one action.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Add a trigger node and configure it",
+            "Add an action node and connect it to the trigger",
+            "Test workflow execution manually and schedule it to run automatically",
+            "Read the execution log to debug"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Pick the action you want today's workflow to take.",
+            "prompts": [
+              "Do I want the workflow to send to my email, Slack, or Telegram? Pick one.",
+              "What time should it fire each day? (for testing, pick 5 min from now)",
+              "What message do I want it to send? (one line)"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Your first workflow (n8n official docs tutorial)",
+              "creator": "n8n Official",
+              "url": "https://docs.n8n.io/try-it-out/tutorial-first-workflow/",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Read it as you build, not before",
+                "Adapt the tutorial to your chosen action (email or Slack, not NASA API)"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Create a new workflow. Name it 'Daily Reminder - Test'.",
+              "Add Schedule Trigger node. Configure: fire once per day at a time 5 minutes from now.",
+              "Add Gmail, Slack, or Telegram action node (based on your pre-work pick). Configure credentials.",
+              "Connect trigger to action. Set the message body to a static string like: 'Daily reminder from n8n - it works.'",
+              "Click 'Execute workflow' manually. Verify you receive the message.",
+              "Activate the workflow (toggle at top right). Wait 5 minutes. Verify it fires automatically.",
+              "Deactivate the workflow (you do not want daily spam).",
+              "Open the Executions tab. See your runs listed. Click one to see the data flow.",
+              "Save FIRST_WORKFLOW.md: one paragraph describing what the workflow does, one sentence on what broke or surprised you."
+            ]
+          },
+          "tasks": [
+            "Workflow 'Daily Reminder - Test' exists in n8n",
+            "Manual execution succeeded",
+            "Scheduled execution fired automatically once",
+            "Workflow deactivated after testing",
+            "FIRST_WORKFLOW.md saved"
+          ],
+          "stretchGoals": [
+            "Add a second action: after sending the message, also log it to a Google Sheet",
+            "Try modifying the trigger to run every Monday at 9am instead of daily"
+          ],
+          "completionCriteria": [
+            "You built and ran your first workflow end to end",
+            "You understand the trigger + action model"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 10 of 90. First n8n workflow shipped. Triggers on schedule, sends me a message. Sounds trivial, but it is the foundation every AI automation builds on. Live build log at ammar-blueprint.vercel.app",
+            "optional": true
+          },
+          "reflectionPrompt": "What took longer than expected? What was easier than expected? The gap between expectation and reality tells me where my mental model of n8n is wrong.",
+          "artifact": "Live n8n workflow + FIRST_WORKFLOW.md"
+        },
+        {
+          "dayNumber": 11,
+          "title": "HTTP Requests: talk to any API",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first 3 real n8n workflows",
+          "hook": "Most of what you will build involves APIs: pulling leads from Apollo, pushing data to HubSpot, getting data from OpenAI. n8n has native integrations for ~400 apps, but the HTTP Request node is the universal key. It talks to anything. Master it today and your automation ceiling disappears.",
+          "objective": "Make authenticated API calls from n8n using the HTTP Request node.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Use the HTTP Request node to call a public API",
+            "Add authentication headers to call a protected API",
+            "Parse JSON response and use specific fields downstream"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Read without judgment: this is where n8n feels technical for the first time. That is normal. You are not expected to memorize HTTP methods today.",
+            "prompts": [
+              "What is my mental model of what an API does? (sentence)",
+              "What is the difference between GET and POST? (guess, then check after)"
+            ]
+          },
+          "videos": [
+            {
+              "title": "n8n HTTP Request node tutorial",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=n8n+HTTP+request+node+tutorial+2026",
+              "durationMinutes": 25,
+              "keyTimestamps": [
+                "Pick a video from 2025 or 2026",
+                "Focus on: headers, query parameters, body, response parsing"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Create a new workflow: 'API Practice'.",
+              "Add Manual Trigger (not Schedule, you want to click to run).",
+              "Add HTTP Request node. Configure: GET request to https://jsonplaceholder.typicode.com/users (a public test API, no auth needed).",
+              "Execute. See the array of users returned in the output panel.",
+              "Add a Set node after HTTP Request. Use it to extract just the name and email fields for each user.",
+              "Execute again. Verify you see clean data.",
+              "Now the harder one: sign up for free OpenWeatherMap API (or any free API requiring a key).",
+              "Add credentials in n8n: Settings > Credentials > New > Header Auth. Name it, set header name (often 'Authorization' or 'X-API-Key'), paste your key.",
+              "Add second HTTP Request node in a new workflow or the same one. Configure to use the credential you created. Make a GET request to the weather API for any city.",
+              "Execute. Verify authenticated response.",
+              "Save API_PRACTICE.md: describe what you built and what clicked for you about how APIs work."
+            ]
+          },
+          "tasks": [
+            "Successfully called jsonplaceholder public API",
+            "Set node used to extract specific fields",
+            "Credentials created in n8n for authenticated API",
+            "Authenticated API call returned data",
+            "API_PRACTICE.md saved"
+          ],
+          "stretchGoals": [
+            "Chain 2 API calls: use data from the first call to construct the second",
+            "Try a POST request instead of GET"
+          ],
+          "completionCriteria": [
+            "You can call any public API from n8n",
+            "You know how to add an API key securely via credentials",
+            "You can read JSON responses and use fields downstream"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 11 of 90. n8n HTTP Request node unlocked. I can now pull data from any API and pipe it into workflows. Every AI automation agency build starts here.",
+            "optional": true
+          },
+          "reflectionPrompt": "Before today, APIs felt abstract to me. After today, how do they feel? What changed in my head about what automation can do?",
+          "artifact": "Live authenticated API workflow + API_PRACTICE.md"
+        },
+        {
+          "dayNumber": 12,
+          "title": "Error handling and when things break",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first 3 real n8n workflows",
+          "hook": "Workflows fail. APIs time out, data comes back malformed, services go down. A workflow that handles errors gracefully is the difference between 'cool demo' and 'production system a client pays $2K/mo for'. Today you learn to build workflows that do not break your client's business when the internet has a bad day.",
+          "objective": "Implement error handling in n8n workflows so failures are caught, logged, and alerted, not silently swallowed.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Use the Error Trigger node to catch failures",
+            "Route errors to a notification channel (email, Slack)",
+            "Add retry logic to flaky API calls",
+            "Know when 'fail fast' is better than 'retry silently'"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Think about failures before you learn to handle them.",
+            "prompts": [
+              "What would happen to my Day 11 weather workflow if the API is down when it fires?",
+              "If a client's lead routing workflow failed silently for 3 days, what is the cost to them?",
+              "What signal do I want when a workflow breaks - quiet log, email, Slack ping, SMS?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "n8n error handling workflow tutorial",
+              "creator": "Search YouTube 2025-2026",
+              "url": "https://www.youtube.com/results?search_query=n8n+error+handling+workflow+tutorial",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on Error Trigger node and error workflows",
+                "Skip generic 'what is error handling' intros"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Open Day 11's API Practice workflow.",
+              "In the HTTP Request node settings, find 'Retry on Fail'. Enable it. Set max retries to 3, wait 5 seconds between.",
+              "In the same node, under 'Continue on Fail', set it to 'Continue' (so workflow does not halt).",
+              "Create a separate 'Error Handler' workflow. Add Error Trigger node as first node.",
+              "After Error Trigger, add Gmail or Slack action that sends YOU a message: 'n8n workflow failed: {error details}'.",
+              "Go to your main workflow's Settings. Set its 'Error Workflow' to the Error Handler you just built.",
+              "Deliberately break your main workflow: change the API URL to something invalid.",
+              "Execute. Watch the error propagate to your Error Handler. Verify you got the notification.",
+              "Fix the URL back. Execute again. Verify normal run.",
+              "Save ERROR_HANDLING.md: describe the pattern and one scenario where you would use retry vs fail-fast."
+            ]
+          },
+          "tasks": [
+            "Main workflow has retry logic on HTTP node",
+            "Error Handler workflow exists and is wired to main workflow",
+            "Deliberate failure triggered a notification",
+            "ERROR_HANDLING.md saved"
+          ],
+          "stretchGoals": [
+            "Add a condition: only retry on specific error codes (e.g. 500, 503), fail fast on 401/403",
+            "Log all errors to a Google Sheet for a running audit trail"
+          ],
+          "completionCriteria": [
+            "Workflow fails gracefully, not silently",
+            "You get notified when something breaks",
+            "Production-grade workflow you could sell a client with a straight face"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 12 of 90. Error handling added. Most automation tutorials skip this. This is what separates a demo from a system a B2B SaaS team trusts.",
+            "optional": true
+          },
+          "reflectionPrompt": "What scares me more: a workflow that fails loudly, or one that fails silently? Which does my ICP fear more?",
+          "artifact": "Main workflow + Error Handler workflow + ERROR_HANDLING.md"
+        },
+        {
+          "dayNumber": 13,
+          "title": "Build a real automation: lead enrichment MVP",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first 3 real n8n workflows",
+          "hook": "Today is the payoff for Days 8-12. You build a real lead enrichment workflow - the kind you will actually sell. Input: a company name. Output: that company enriched with domain, LinkedIn, industry, and size, ready to drop into Apollo or a Google Sheet. This is v0.1 of the SDR-in-a-Box system you will later sell for $2-5K.",
+          "objective": "Build a working lead enrichment workflow end to end: input row from Google Sheet, enriched output back to Google Sheet.",
+          "estimatedMinutes": 180,
+          "learningOutcome": [
+            "Combine Google Sheets trigger, HTTP Request, and Google Sheets action in one workflow",
+            "Use a real enrichment API (Clearbit, Apollo, or public sources)",
+            "Handle the data transformation between nodes"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Set up the raw materials before building.",
+            "prompts": [
+              "Create a Google Sheet with columns: Company Name, Domain, LinkedIn URL, Industry, Size, Enriched At.",
+              "Add 5 real company names in the first column (pick from your Day 6 target accounts).",
+              "Pick your enrichment source: Apollo API (you have free tier), Clearbit free tier, or scrape from public web via simple Google search API."
+            ]
+          },
+          "videos": [
+            {
+              "title": "n8n Google Sheets integration tutorial",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=n8n+google+sheets+automation+lead+enrichment",
+              "durationMinutes": 30,
+              "keyTimestamps": [
+                "Focus on Google Sheets trigger and action nodes",
+                "Skip fluff intros"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "New workflow: 'Lead Enrichment v0.1'.",
+              "Add Google Sheets Trigger (new row added). Connect to your sheet.",
+              "Add HTTP Request node: call your enrichment API with the Company Name from the triggered row.",
+              "Add Set node: map API response fields to your sheet columns (domain, linkedin, industry, size).",
+              "Add Google Sheets action: Update row with enriched fields, match on company name.",
+              "Add error handling (use yesterday's pattern).",
+              "Test: add a new row to your sheet, manually trigger workflow, verify enrichment lands back in the sheet.",
+              "Activate the workflow.",
+              "Add 2 more test rows. Verify auto-enrichment fires.",
+              "Save ENRICHMENT_V0.md: what it does, what API you used, what does not work yet, what you would need to productize this for a client."
+            ]
+          },
+          "tasks": [
+            "Google Sheet set up with 5 real target companies",
+            "Workflow runs end to end: row in, enrichment out",
+            "Workflow active and firing on new rows",
+            "Error handling wired",
+            "ENRICHMENT_V0.md saved"
+          ],
+          "stretchGoals": [
+            "Add a second enrichment source as fallback if first API fails",
+            "Add AI enrichment: use Claude or OpenAI to generate a one-line 'why target this company' note",
+            "Export the workflow as JSON and commit to GitHub as a portfolio piece"
+          ],
+          "completionCriteria": [
+            "Workflow solves a real problem you would charge money for",
+            "You understand every node, no mystery boxes"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 13 of 90. First real n8n build: automated lead enrichment. Drop a company name into a sheet, get domain / industry / size / LinkedIn back in 10 seconds. This is v0.1 of the SDR-in-a-Box system I will sell. Code on GitHub.",
+            "optional": true
+          },
+          "reflectionPrompt": "Today I built something that a real buyer would pay for. If a client asked me to productize this, what would the next 5 things I would add? Those 5 things are my upgrade roadmap.",
+          "artifact": "ENRICHMENT_V0.md + exported workflow JSON in GitHub"
+        },
+        {
+          "dayNumber": 14,
+          "title": "Week 1 retrospective and portfolio commit",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first 3 real n8n workflows",
+          "hook": "End of Week 1. Six days of n8n behind you. You went from zero n8n knowledge to a working lead enrichment workflow. Today you consolidate: commit everything to GitHub, write a public recap, and honestly assess what still feels shaky. The recap post you write today will be the most credibility-building content you create all month.",
+          "objective": "Consolidate Week 1 learnings into GitHub portfolio assets and a public build log post.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Have 3 n8n workflows exported as JSON and committed to GitHub",
+            "Publish a Week 1 recap that positions you as a builder",
+            "Identify the 1 area from Week 1 that still feels weak"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Review the week before writing about it.",
+            "prompts": [
+              "Which day of Week 1 taught me the most?",
+              "Which day surprised me? (positive or negative)",
+              "If I had to redo one day, which and why?"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "In n8n, export these 3 workflows as JSON: Daily Reminder (Day 10), Authenticated API call (Day 11), Lead Enrichment v0.1 (Day 13).",
+              "Create a new folder in your ammar-blueprint repo: /workflows/week-1/.",
+              "Drop the 3 JSON files in.",
+              "Create /workflows/week-1/README.md explaining what each workflow does and how to import into n8n.",
+              "Commit and push.",
+              "Write WEEK_1_RECAP.md in project root. Structure: what I built, what I learned, what still feels shaky, metrics (hours spent, workflows shipped, concepts understood), Week 2 preview.",
+              "Publish a LinkedIn post or X thread based on the recap. Hook: 'I knew zero about n8n 7 days ago. Today I have 3 working automations committed to GitHub. Here is what I built:'"
+            ]
+          },
+          "tasks": [
+            "3 workflow JSONs in /workflows/week-1/ on GitHub",
+            "Workflows README documents each one",
+            "WEEK_1_RECAP.md written",
+            "Public recap post published"
+          ],
+          "stretchGoals": [
+            "Record a 3-minute Loom walkthrough of the Lead Enrichment workflow and embed in LinkedIn post",
+            "DM 2 people from your Day 6 target list with the Loom as a free gift (NOT a pitch, just value)"
+          ],
+          "completionCriteria": [
+            "GitHub has visible /workflows/week-1/ folder with 3 JSONs",
+            "LinkedIn or X has a public Week 1 recap",
+            "You can explain each workflow in 60 seconds"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "Week 1 of 12 complete. I learned n8n from zero and shipped 3 working automations. All code public on GitHub [link]. Next week: Make.com, so I can tell clients which tool fits their stack. Full journey at ammar-blueprint.vercel.app",
+            "optional": false
+          },
+          "reflectionPrompt": "If I could tell Day 8 Ammar one thing about Week 1, what would it be? That thing is my first hard-earned belief about this craft.",
+          "artifact": "/workflows/week-1/ folder on GitHub + WEEK_1_RECAP.md + public recap post"
+        }
+      ]
+    },
+    {
+      "slug": "week-2-makecom-foundations",
+      "number": 2,
+      "title": "Make.com Foundations",
+      "summary": "Learn Make.com and run a head-to-head with n8n. Rebuild Week 1's best workflow in Make to feel the difference. Pick your primary platform for the rest of the program. Knowing both makes you a consultant who can speak a client's existing stack, not push one tool.",
+      "theme": "Know both, commit to one",
+      "days": [
+        {
+          "dayNumber": 15,
+          "title": "What Make.com is and why clients often already use it",
+          "phase": "Technical Foundation",
+          "weekMission": "Know both platforms, commit to one primary",
+          "hook": "Most B2B SaaS companies that already automate something are using Make or Zapier, not n8n. If you only know n8n, you lose half your prospects in the first call. Today you meet Make properly. Not to switch. To understand the competitor your clients already paid for.",
+          "objective": "Understand what Make.com is, how it differs from n8n, and when it is the right choice for a client.",
+          "estimatedMinutes": 75,
+          "learningOutcome": [
+            "Explain Make.com in one sentence to a buyer",
+            "Name the 3 situations where Make beats n8n",
+            "Name the 3 situations where n8n beats Make"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Predict before you learn.",
+            "prompts": [
+              "What do I think the difference between Make and n8n is?",
+              "Which one do I think is easier for a non-technical founder?",
+              "Which one do I think is more powerful for AI work?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Make.com vs n8n: The 2026 Definitive Comparison",
+              "creator": "NoCodeRank",
+              "url": "https://nocoderank.com/n8n-vs-make-the-2026-definitive-comparison-for-workflow-automation/",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on 'who is it for' section",
+                "Skim pricing, read closely the AI capabilities section"
+              ]
+            },
+            {
+              "title": "n8n vs Make (Integromat): Definitive Comparison for 2026",
+              "creator": "Cipher Projects",
+              "url": "https://cipherprojects.com/blog/posts/n8n-vs-make-automation-platform-comparison/",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Focus on AI-native automation section",
+                "Note the cost math: Make counts per-module, n8n counts per-execution"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 30,
+            "steps": [
+              "Write MAKE_DECISION.md in your project.",
+              "Section 1: Make.com in one sentence.",
+              "Section 2: 3 scenarios where Make wins over n8n.",
+              "Section 3: 3 scenarios where n8n wins over Make.",
+              "Section 4: your prediction - which platform will your ICP more often already use, and what does that mean for you as a consultant?"
+            ]
+          },
+          "tasks": [
+            "MAKE_DECISION.md saved with all 4 sections"
+          ],
+          "stretchGoals": [
+            "Sign up for Make.com free tier (1,000 operations/month)",
+            "Scroll through Make's template library, note 3 templates you could sell as services"
+          ],
+          "completionCriteria": [
+            "Can explain Make in one sentence",
+            "Can articulate when to use which platform"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 15 of 90. Most automation freelancers only know one tool. That is a weakness when clients already run on the other. Learning Make.com this week to be a real consultant, not a one-trick builder.",
+            "optional": true
+          },
+          "reflectionPrompt": "If a SaaS founder tells me 'we already have Zapier, can we just use that?' - how would I answer? What is my actual opinion, not a sales pitch?",
+          "artifact": "MAKE_DECISION.md"
+        },
+        {
+          "dayNumber": 16,
+          "title": "Build your first Make scenario",
+          "phase": "Technical Foundation",
+          "weekMission": "Know both platforms, commit to one primary",
+          "hook": "Make is easier than n8n for beginners. That is not an insult to n8n, it is a feature of Make. Today you feel it. You build your first scenario and notice how the drag-and-drop makes certain things obvious that n8n hides behind JSON. This is why Make has more non-technical users.",
+          "objective": "Build a working Make scenario end to end with trigger, action, and data flow.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Navigate the Make scenario builder",
+            "Use modules, connect them, map fields",
+            "Execute and schedule scenarios",
+            "Read the Operations counter and understand pricing implications"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Pick what you want to build today. Rebuild the Day 10 n8n workflow in Make for apples-to-apples comparison.",
+            "prompts": [
+              "Recall Day 10: trigger on schedule, send a message. Same thing in Make.",
+              "What was hard in n8n Day 10 that I am curious to compare?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Make.com tutorial for beginners 2026",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=make.com+tutorial+for+beginners+2026+first+scenario",
+              "durationMinutes": 30,
+              "keyTimestamps": [
+                "Pick a 2025 or 2026 video",
+                "Focus on scenario builder + first scenario"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Log into Make.com free tier.",
+              "Create a new scenario. Add Schedule trigger. Set to run every day at a specific time.",
+              "Add Gmail, Slack, or Telegram module. Same channel as Day 10 so you can compare.",
+              "Connect modules with the drag line. Map the message text.",
+              "Run once manually. Verify delivery.",
+              "Schedule and activate. Wait one cycle. Verify automatic fire.",
+              "Deactivate.",
+              "Open the Operations counter in your account. Note how many operations today's tests consumed.",
+              "Save FIRST_MAKE_SCENARIO.md: what built faster in Make than n8n, what built slower, and the 'feel' difference."
+            ]
+          },
+          "tasks": [
+            "Scenario built and tested",
+            "Ran manually and on schedule",
+            "Operations counter checked and noted",
+            "FIRST_MAKE_SCENARIO.md saved"
+          ],
+          "stretchGoals": [
+            "Import a template from Make's library and study how it is built",
+            "Try Make's Maia AI assistant to build a scenario from a text prompt"
+          ],
+          "completionCriteria": [
+            "Working scenario in Make",
+            "Can compare the build experience to n8n Day 10"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 16 of 90. Built the same workflow in both n8n and Make. Here is what surprised me: [one thing].",
+            "optional": true
+          },
+          "reflectionPrompt": "Make felt different from n8n in what specific way? Was that difference 'easier' or 'more limited'? The honest answer determines which tool I lean toward.",
+          "artifact": "Live Make scenario + FIRST_MAKE_SCENARIO.md"
+        },
+        {
+          "dayNumber": 17,
+          "title": "Make advanced: routers, filters, aggregators",
+          "phase": "Technical Foundation",
+          "weekMission": "Know both platforms, commit to one primary",
+          "hook": "Real scenarios branch. If lead size is enterprise, send to sales. If SMB, send to self-serve. Make's router, filter, and aggregator are what turn linear workflows into business logic. Today you learn them.",
+          "objective": "Build a branching Make scenario using router, filter, and aggregator modules.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Route data paths based on conditions",
+            "Filter out items that do not match criteria",
+            "Aggregate multiple items into one output"
+          ],
+          "preWork": {
+            "estimatedMinutes": 5,
+            "instructions": "Imagine a realistic branching workflow.",
+            "prompts": [
+              "A new lead comes in. ARR > $5M goes to sales. ARR < $5M goes to self-serve. How would I build that?",
+              "What should happen if ARR is missing from the data?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Make.com routers and filters tutorial",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=make.com+router+filter+aggregator+tutorial",
+              "durationMinutes": 25,
+              "keyTimestamps": [
+                "Focus on router behavior and filter conditions"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "New scenario: 'Lead Router Test'.",
+              "Trigger: Manual (for testing).",
+              "Add a Set Variable module that fakes 3 sample leads (name, company, ARR).",
+              "Iterate over the array.",
+              "Add a Router module after the iterator.",
+              "Path 1: Filter ARR > 5000000, then send to Slack channel 'sales'.",
+              "Path 2: Filter ARR <= 5000000, then send to Slack channel 'self-serve'.",
+              "Path 3 (fallback): no ARR data, send to Slack channel 'needs-review'.",
+              "Run manually with sample data. Verify each path fires correctly.",
+              "Save MAKE_BRANCHING.md describing the pattern."
+            ]
+          },
+          "tasks": [
+            "Router scenario with 3 paths works",
+            "Each path fires based on filter conditions",
+            "Fallback path catches missing data",
+            "MAKE_BRANCHING.md saved"
+          ],
+          "stretchGoals": [
+            "Add an Aggregator that collects all 'enterprise' leads from a batch run and sends one summary message",
+            "Rebuild this exact scenario in n8n (using IF node). Time both. Which was faster?"
+          ],
+          "completionCriteria": [
+            "Branching logic works in Make",
+            "You understand when routers vs filters apply"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 17 of 90. Most automation is not linear. Real workflows branch based on business logic. Learned Make routers today. This is where $500 scenarios become $2,500 scenarios.",
+            "optional": true
+          },
+          "reflectionPrompt": "Linear workflows are easy. Branching is what clients pay for. What is the first branching workflow I would build for my ICP?",
+          "artifact": "Live Make scenario + MAKE_BRANCHING.md"
+        },
+        {
+          "dayNumber": 18,
+          "title": "Rebuild Day 13 lead enrichment in Make",
+          "phase": "Technical Foundation",
+          "weekMission": "Know both platforms, commit to one primary",
+          "hook": "Same input, same output, different tool. Today you rebuild the Day 13 n8n lead enrichment in Make, module for module. By end of day you have a direct apples-to-apples comparison. You will feel one of them as 'home' and one as 'tolerable'. That is your primary platform pick.",
+          "objective": "Rebuild Day 13's lead enrichment workflow in Make.com to produce a direct comparison.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Replicate a multi-step workflow across platforms",
+            "Recognize which tool's mental model fits yours",
+            "Make an informed primary-platform decision"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Set up the same Google Sheet you used Day 13, or duplicate.",
+            "prompts": [
+              "Same sheet, same API, same output columns",
+              "What went wrong on Day 13 that I now know how to avoid?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Make.com Google Sheets integration tutorial",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=make.com+google+sheets+enrichment",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on Google Sheets + HTTP modules"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "New Make scenario: 'Lead Enrichment - Make version'.",
+              "Trigger: Google Sheets new row.",
+              "HTTP module: same enrichment API as Day 13.",
+              "Data mapping: same output fields.",
+              "Google Sheets module: update row.",
+              "Add error handling.",
+              "Test with the same 5 companies.",
+              "Save ENRICHMENT_V0_MAKE.md.",
+              "Update ENRICHMENT_V0.md from Day 13 with a comparison section: time to build in each, gotchas in each, which one I would pick to productize."
+            ]
+          },
+          "tasks": [
+            "Make scenario produces same enrichment output as n8n version",
+            "Both versions tested with identical inputs",
+            "Comparison section written"
+          ],
+          "stretchGoals": [
+            "Time how long each platform took you to build the same workflow. Total including debug.",
+            "Calculate cost at 100 enrichments/month on each platform (n8n self-host vs Make free vs Make Core)"
+          ],
+          "completionCriteria": [
+            "Two working enrichment workflows, one per platform",
+            "Direct comparison written"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 18 of 90. Built the same lead enrichment in n8n and Make. Results: [one-sentence comparison]. This is the level of due diligence your consultant should do before recommending a stack.",
+            "optional": true
+          },
+          "reflectionPrompt": "Which tool felt like home and which felt like work? That visceral reaction matters more than any feature list.",
+          "artifact": "2 working enrichment flows + comparison section in ENRICHMENT_V0.md"
+        },
+        {
+          "dayNumber": 19,
+          "title": "Pick your primary: make the decision",
+          "phase": "Technical Foundation",
+          "weekMission": "Know both platforms, commit to one primary",
+          "hook": "You have real data now. Today you commit. This decision is not forever but it sets the 70 remaining days. Most consultants who try to stay platform-neutral ship worse work than those who pick a side and get deep. You are picking the one you will be excellent with.",
+          "objective": "Commit to n8n or Make as your primary platform for Weeks 3-12. Document the decision with reasoning.",
+          "estimatedMinutes": 90,
+          "learningOutcome": [
+            "Make a platform commitment based on real experience, not hype",
+            "Know how to still consult on the OTHER platform when a client needs it",
+            "Set up your positioning to reflect the choice"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Score both platforms on dimensions that matter.",
+            "prompts": [
+              "Build speed for YOU: n8n or Make, which felt faster by Day 18?",
+              "Your ICP (Western B2B SaaS $2-20M ARR): which platform would they trust more?",
+              "AI agent work: which platform handles agents natively in 2026?",
+              "Cost at scale: which is cheaper at 5-10 clients?",
+              "Portfolio signal: which shows more builder depth on GitHub?"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 60,
+            "steps": [
+              "Write PRIMARY_PLATFORM.md in your project.",
+              "Section 1: the pick (n8n or Make, one word).",
+              "Section 2: 5 reasons for the pick, each tied to your specific situation.",
+              "Section 3: when I would still recommend the OTHER platform to a client.",
+              "Section 4: what this means for my positioning. Update OFFER.md if needed.",
+              "Update ammar-blueprint README and LinkedIn headline if your platform pick changes your claimed expertise.",
+              "Commit all changes."
+            ]
+          },
+          "tasks": [
+            "PRIMARY_PLATFORM.md written with all 4 sections",
+            "OFFER.md reviewed and updated if needed",
+            "README and LinkedIn adjusted if primary platform changed"
+          ],
+          "stretchGoals": [
+            "Write a LinkedIn post: 'I tested n8n and Make for 11 days. Here is what I picked and why.' This is credibility-building content."
+          ],
+          "completionCriteria": [
+            "Decision made, documented, and reflected in public positioning"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 19 of 90. Decision made: [n8n/Make] is my primary automation platform for Weeks 3-12. Here are the 3 biggest reasons: [your reasons]. If you are a SaaS founder deciding between them, DM me - happy to share what I learned.",
+            "optional": false
+          },
+          "reflectionPrompt": "Making this decision required data I did not have 11 days ago. What other decisions in my life would I benefit from waiting on until I have real data?",
+          "artifact": "PRIMARY_PLATFORM.md + updated OFFER.md + public decision post"
+        },
+        {
+          "dayNumber": 20,
+          "title": "Advanced features in your chosen platform",
+          "phase": "Technical Foundation",
+          "weekMission": "Know both platforms, commit to one primary",
+          "hook": "You picked your platform yesterday. Today you go deeper on it. One day of advanced features to lift you from 'I can build basic workflows' to 'I can solve specific client problems'. Pick 3 features from the advanced list and build mini-demos.",
+          "objective": "Learn 3 advanced features of your primary platform by building mini-demos of each.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Use 3 advanced features you had not touched before",
+            "Know which advanced features translate to client value",
+            "Have 3 more small workflows in your portfolio"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Pick your 3 features.",
+            "prompts": [
+              "For n8n: expressions, code node, webhook trigger, sub-workflows, variables, data storage",
+              "For Make: data stores, aggregators, iterators, JSON modules, text parser, webhook responses",
+              "Pick 3 from your platform's list, ones that would make a client say 'oh that is cool'."
+            ]
+          },
+          "videos": [
+            {
+              "title": "Advanced features for your picked platform",
+              "creator": "Search YouTube for each feature you picked",
+              "url": "https://www.youtube.com/results?search_query=n8n+advanced+features+2026+tutorial",
+              "durationMinutes": 45,
+              "keyTimestamps": [
+                "Watch one 15-min video per feature",
+                "Do not watch all 3 then build. Watch 1, build 1, repeat."
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Feature 1: watch video, build mini-demo, save workflow.",
+              "Feature 2: same.",
+              "Feature 3: same.",
+              "Save ADVANCED_FEATURES.md: what each feature does, one client problem each could solve, one gotcha you hit."
+            ]
+          },
+          "tasks": [
+            "3 mini-demos built",
+            "3 new workflows saved in your platform account",
+            "ADVANCED_FEATURES.md saved"
+          ],
+          "stretchGoals": [
+            "Export all 3 mini-demos to /workflows/week-2/ on GitHub",
+            "Turn one of them into a short tutorial thread on X or LinkedIn"
+          ],
+          "completionCriteria": [
+            "3 advanced features understood by building, not just watching",
+            "Each maps to a concrete client use case"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 20 of 90. Advanced [platform] features shipped. Most freelancers stop at basics. The gap between 'can build' and 'can sell' is these features.",
+            "optional": true
+          },
+          "reflectionPrompt": "Which of the 3 features clicked instantly and which took the most re-reading? The one that took longest is probably your biggest growth area.",
+          "artifact": "3 mini-demo workflows + ADVANCED_FEATURES.md"
+        },
+        {
+          "dayNumber": 21,
+          "title": "Week 2 retrospective and platform commitment post",
+          "phase": "Technical Foundation",
+          "weekMission": "Know both platforms, commit to one primary",
+          "hook": "Week 2 done. You now have fluency in one platform and working knowledge of the other. That puts you ahead of 80% of AI automation freelancers who only know one tool. Today you consolidate and publish.",
+          "objective": "Commit Week 2 artifacts to GitHub and publish a Week 2 retrospective.",
+          "estimatedMinutes": 90,
+          "learningOutcome": [
+            "Have Week 2 workflows exported and committed",
+            "Publish a retrospective that signals consultant-grade thinking",
+            "Plan Week 3 with clearer context"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Review before writing.",
+            "prompts": [
+              "What was the biggest unlock of Week 2?",
+              "What do I still feel shaky on?",
+              "If I were hiring me as a consultant now, what would I trust me to build?"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Export Week 2 workflows to /workflows/week-2/ folder on GitHub.",
+              "Update root README to show Week 2 complete.",
+              "Write WEEK_2_RECAP.md.",
+              "Publish public retrospective on LinkedIn or X.",
+              "Preview Week 3: AI agents. Look ahead at Day 22-28 briefly so Monday does not start cold."
+            ]
+          },
+          "tasks": [
+            "Week 2 workflows on GitHub",
+            "WEEK_2_RECAP.md written",
+            "Public retrospective published",
+            "Scanned Week 3 preview"
+          ],
+          "stretchGoals": [
+            "Update your Upwork profile skills to include both n8n and Make",
+            "Send the recap post to 3 people from your Day 6 target list via DM"
+          ],
+          "completionCriteria": [
+            "GitHub shows Week 1 and Week 2 folders",
+            "Public recap live",
+            "You feel ready for Week 3"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "Week 2 of 12 complete. 11 days into n8n + Make. Picked [platform] as my primary for AI automation work. Why: [your reason]. Next week: AI agents. Track at ammar-blueprint.vercel.app",
+            "optional": false
+          },
+          "reflectionPrompt": "Two weeks in, am I on pace? If not, where am I slipping - effort, energy, or conviction? Each has a different fix.",
+          "artifact": "/workflows/week-2/ on GitHub + WEEK_2_RECAP.md + public post"
+        }
+      ]
+    },
+    {
+      "slug": "week-3-ai-agents",
+      "number": 3,
+      "title": "AI Agents",
+      "summary": "Where workflows become intelligent. Today's workflows execute rules. Agents make decisions. Learn the AI Agent node in your primary platform, prompt engineering for workflows, memory, and tool-calling. By end of week you have a working agent that does real work a client would pay for.",
+      "theme": "From rule-based to decision-making automation",
+      "days": [
+        {
+          "dayNumber": 22,
+          "title": "Workflows vs agents: when to use which",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first AI agent that does real client work",
+          "hook": "Every AI automation pitch in 2026 says the word 'agent'. Most of those pitches describe things that are actually just workflows with a Claude API call bolted on. Today you learn the real difference. This is your vocabulary for client calls.",
+          "objective": "Distinguish between workflows and agents and know when each is the right choice.",
+          "estimatedMinutes": 75,
+          "learningOutcome": [
+            "Define an AI agent in one sentence to a non-technical buyer",
+            "Name 3 tasks that are agent-appropriate and 3 that are workflow-appropriate",
+            "Recognize agent-washing in other people's pitches"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Test your current mental model.",
+            "prompts": [
+              "What do I think the difference between a workflow and an agent is?",
+              "If a client asks 'can you build me an agent?' what do I say?",
+              "Give one example of a task an agent handles better than a workflow."
+            ]
+          },
+          "videos": [
+            {
+              "title": "Agents vs Workflows: Pick the Right Tool with Nick Saraev",
+              "creator": "n8n Masterclass podcast",
+              "url": "https://castbox.fm/episode/Agents-vs-Workflows%3A-Pick-the-Right-Tool-or-Pay-the-Price-with-Nick-Saraev-id6835749-id868252221",
+              "durationMinutes": 40,
+              "keyTimestamps": [
+                "Focus on Nick's distinction between the two",
+                "Listen for his examples of when agents are wrong"
+              ]
+            },
+            {
+              "title": "How to Build AI Agents with n8n: Complete 2026 Guide",
+              "creator": "Strapi blog",
+              "url": "https://strapi.io/blog/build-ai-agents-n8n",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Read the Memory and Tool-Calling sections"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 30,
+            "steps": [
+              "Write AGENTS_VS_WORKFLOWS.md.",
+              "Section 1: one-sentence definition of each.",
+              "Section 2: 3 tasks agents excel at.",
+              "Section 3: 3 tasks workflows are better for (hint: predictable, deterministic, high-volume).",
+              "Section 4: Nick's rule of thumb for picking.",
+              "Section 5: your ICP's typical problems - which ones are agent-shaped?"
+            ]
+          },
+          "tasks": [
+            "AGENTS_VS_WORKFLOWS.md saved"
+          ],
+          "stretchGoals": [
+            "List 5 'agents' you have seen promoted online. Reclassify each as workflow vs true agent vs unclear.",
+            "Draft a LinkedIn post called 'Agent-washing is the new AI-washing'"
+          ],
+          "completionCriteria": [
+            "Can articulate the difference verbally in 30 seconds",
+            "Can call out pitches that misuse 'agent' language"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 22 of 90. Most 'AI agents' being sold in 2026 are just workflows with a prompt. Real agents make decisions. Here is the test: [one-sentence test you learned].",
+            "optional": true
+          },
+          "reflectionPrompt": "If my ICP asked me to build an 'agent', my first job is to figure out whether they actually need one. What 3 questions would I ask them to find out?",
+          "artifact": "AGENTS_VS_WORKFLOWS.md"
+        },
+        {
+          "dayNumber": 23,
+          "title": "Your first AI node: Claude API in your workflow",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first AI agent that does real client work",
+          "hook": "Before agents, you need the atomic building block: calling an LLM from inside a workflow. Today you wire Claude API into n8n or Make. The output of this single call is raw material your entire AI automation practice builds on.",
+          "objective": "Make authenticated Claude API calls from your primary platform and use the response downstream.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Set up Anthropic API credentials in your platform",
+            "Send a prompt to Claude and receive structured output",
+            "Use prompt engineering to shape the response",
+            "Parse JSON output and use downstream"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Get your credentials ready.",
+            "prompts": [
+              "Sign up at console.anthropic.com. Create a test API key. Save it to a secure place.",
+              "Put $5-10 in credits. This gets you hundreds of test calls.",
+              "Pick what you want Claude to do today. Suggest: input a company name, output a one-line outreach hook."
+            ]
+          },
+          "videos": [
+            {
+              "title": "Anthropic API + n8n tutorial",
+              "creator": "Search YouTube for your platform",
+              "url": "https://www.youtube.com/results?search_query=n8n+anthropic+claude+API+tutorial",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on credential setup and first call"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "In your platform, add Anthropic API credentials using your key.",
+              "New workflow: 'Claude First Call'.",
+              "Trigger: Manual.",
+              "Set module: create a variable 'companyName' with value 'Linear'.",
+              "Anthropic node: send a prompt like 'Write a 15-word outreach hook for a B2B SaaS company called {companyName}. Focus on a specific pain your audience feels. No greetings.'",
+              "Execute. Verify Claude returns a hook.",
+              "Iterate: tweak the prompt 3 times. Note how output changes.",
+              "Save an output you like as a reference.",
+              "Now swap the model: try Haiku (cheaper/faster) vs Sonnet (smarter). Note the difference.",
+              "Save FIRST_AI_CALL.md with: the prompt that worked, the output, and the cost per call."
+            ]
+          },
+          "tasks": [
+            "Anthropic credentials set up in platform",
+            "Workflow returns output from Claude",
+            "Experimented with 3 prompt variations",
+            "Tried Haiku vs Sonnet",
+            "FIRST_AI_CALL.md saved"
+          ],
+          "stretchGoals": [
+            "Run the same prompt through OpenAI API for comparison",
+            "Track cost per call in your FIRST_AI_CALL.md"
+          ],
+          "completionCriteria": [
+            "Claude API is wired into your primary platform",
+            "You have at least one useful output saved"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 23 of 90. First Claude API call inside n8n. One workflow can now generate personalized outreach hooks at scale. This is the atomic unit of modern AI automation.",
+            "optional": true
+          },
+          "reflectionPrompt": "The output quality of Claude is directly proportional to the specificity of my prompt. What prompt skills would I need to level up for this to become a repeatable client offer?",
+          "artifact": "FIRST_AI_CALL.md + working Claude API workflow"
+        },
+        {
+          "dayNumber": 24,
+          "title": "Prompt engineering for workflows",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first AI agent that does real client work",
+          "hook": "Yesterday Claude generated output. Today you make that output reliable. In production, a 90% accurate prompt is a problem. A 99.5% accurate prompt is a product. Today you learn to turn guesswork into deterministic output.",
+          "objective": "Write prompts that produce structured, reliable output suitable for production workflows.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Structure prompts with role, context, task, output format",
+            "Use JSON mode or structured output constraints",
+            "Test prompts across diverse inputs for reliability",
+            "Know when to fall back to deterministic logic"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Your Day 23 prompt is probably decent but not production-ready. Diagnose it.",
+            "prompts": [
+              "Run my Day 23 prompt with 10 different company names. Does it return consistent format every time?",
+              "What happens when a company name is weird (emoji, non-English, acronyms)?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Anthropic prompt engineering docs",
+              "creator": "Anthropic",
+              "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+              "durationMinutes": 30,
+              "keyTimestamps": [
+                "Read: Be clear and direct, Use examples (multishot), Use XML tags, Chain prompts"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Rewrite Day 23's prompt using Anthropic's best practices.",
+              "Add a role: 'You are a B2B SaaS outbound specialist.'",
+              "Add context: '{companyName} is a B2B SaaS company. Your audience is the VP Sales.'",
+              "Add task: 'Write a 15-word outreach hook that names a specific pain.'",
+              "Add output format: 'Return ONLY the hook. No preamble, no quotes, no explanation.'",
+              "Add 2 few-shot examples of good output.",
+              "Test with 10 company names. Measure: output length, format consistency, quality.",
+              "Iterate 3 times. Track what improved and what regressed.",
+              "Save PROMPT_V2.md: final prompt, test results, lessons."
+            ]
+          },
+          "tasks": [
+            "Prompt rewritten using Anthropic best practices",
+            "Tested against 10 inputs",
+            "3 iteration rounds",
+            "PROMPT_V2.md saved"
+          ],
+          "stretchGoals": [
+            "Force structured JSON output. Parse and use downstream.",
+            "Add a 'verify' step: second Claude call to grade the first call's output"
+          ],
+          "completionCriteria": [
+            "Prompt produces 9+/10 usable outputs",
+            "Output format is consistent enough to use downstream"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 24 of 90. A prompt that works 9/10 times is a demo. A prompt that works 99/100 is a product. Here is the structure that moved me from demo to production.",
+            "optional": true
+          },
+          "reflectionPrompt": "The gap between a prompt that 'works' and a prompt I would trust in production is bigger than I thought. What does this tell me about how much prompt engineering skill my offer requires?",
+          "artifact": "PROMPT_V2.md + production-grade prompt saved"
+        },
+        {
+          "dayNumber": 25,
+          "title": "AI Agent node: your first real agent",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first AI agent that does real client work",
+          "hook": "Today is the big one. An agent is not a workflow that calls an LLM. It is an LLM that chooses which workflows to call. Today you build one. Small scope. Real capability. By end of day your agent can reason about a task, pick the right tool, and execute.",
+          "objective": "Build a working AI agent using n8n's AI Agent node (or Make equivalent) that can choose between multiple tools.",
+          "estimatedMinutes": 180,
+          "learningOutcome": [
+            "Configure an AI Agent node with memory and tools",
+            "Give the agent 2-3 tools it can choose between",
+            "Understand the decision loop: reason, act, observe, repeat"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Design before you build.",
+            "prompts": [
+              "My agent's one job today: one sentence. Suggest: research a company and decide whether it fits our ICP.",
+              "What are the 2-3 tools my agent needs? (web search, company enrichment, calculator)",
+              "How will I know the agent worked? (success criterion)"
+            ]
+          },
+          "videos": [
+            {
+              "title": "n8n AI Agent node complete tutorial 2026",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=n8n+AI+agent+node+tutorial+2026",
+              "durationMinutes": 40,
+              "keyTimestamps": [
+                "Focus on tool-calling and memory"
+              ]
+            },
+            {
+              "title": "Cole Medin n8n AI agent masterclass",
+              "creator": "Cole Medin",
+              "url": "https://github.com/coleam00",
+              "durationMinutes": 30,
+              "keyTimestamps": [
+                "Deeper technical depth than Nick on agents specifically"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "New workflow: 'ICP Fit Agent'.",
+              "Trigger: Manual with input field 'companyName'.",
+              "Add AI Agent node. Use Claude Sonnet as model.",
+              "Add Memory sub-node: Window Buffer Memory.",
+              "Add Tool 1: HTTP Request to Apollo or Clearbit API (company enrichment).",
+              "Add Tool 2: HTTP Request to a simple web search API (Tavily free tier).",
+              "Agent system prompt: 'You are an ICP fit analyst. Given a company name, decide if it is B2B SaaS, $2-20M ARR, founder-led GTM. Use tools to gather data. Return a fit score 0-100 and 2-sentence reasoning. Return as JSON.'",
+              "Execute with 'Linear'. Watch the agent reason, call tools, synthesize.",
+              "Test with 5 diverse companies: one strong fit, one weak fit, one edge case.",
+              "Save AGENT_V1.md: agent's correct calls, mistakes, and how you would tune the system prompt to fix mistakes."
+            ]
+          },
+          "tasks": [
+            "AI Agent node wired with model + memory + 2 tools",
+            "Agent successfully analyzed 5 companies",
+            "AGENT_V1.md saved with observations"
+          ],
+          "stretchGoals": [
+            "Add a 3rd tool: LinkedIn scraping via Apify",
+            "Add structured output parser so downstream nodes can use the fit score directly",
+            "Add error handling for when tools fail"
+          ],
+          "completionCriteria": [
+            "Agent makes decisions, not just text generation",
+            "You understand how it chose tools"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 25 of 90. Shipped my first real AI agent. Input: company name. Output: ICP fit score with reasoning. This is the building block for SDR-in-a-Box and the entire Weeks 4-6 portfolio. Code on GitHub.",
+            "optional": true
+          },
+          "reflectionPrompt": "An agent is slower and more expensive than a workflow. When is that tradeoff worth it? What pattern in my observations tells me my agent was the right tool, not an over-engineered workflow?",
+          "artifact": "AGENT_V1.md + working ICP Fit Agent workflow"
+        },
+        {
+          "dayNumber": 26,
+          "title": "Memory and context: agents that remember",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first AI agent that does real client work",
+          "hook": "A stateless agent is a chatbot with amnesia. The real power comes from memory: remembering the last 10 interactions, recalling previous decisions, learning from past runs. Today you add memory to your agent and feel the difference.",
+          "objective": "Add persistent memory to your AI agent so it can carry context across runs.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Configure Window Buffer Memory vs persistent memory stores",
+            "Know when to use memory vs when to keep agents stateless",
+            "Implement a simple RAG pattern for agent knowledge"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Think about what memory unlocks.",
+            "prompts": [
+              "What would my ICP Fit Agent from Day 25 do better if it remembered previous analyses?",
+              "What is a realistic piece of 'knowledge' I want my agent to have persistently?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "n8n memory + RAG for AI agents",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=n8n+AI+agent+memory+RAG+tutorial",
+              "durationMinutes": 30,
+              "keyTimestamps": [
+                "Focus on Buffer Memory vs Vector Store Memory"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Extend Day 25's ICP Fit Agent.",
+              "Replace default memory with Window Buffer Memory (20 turns).",
+              "Test: run the agent on 3 companies in a row. Ask it on run 3 to compare these 3 companies you just analyzed. Verify it remembers.",
+              "Advanced: add a simple vector store (Pinecone or Supabase free tier) with 10 sample ICP descriptions.",
+              "Agent system prompt update: Before deciding fit, search the ICP knowledge base for similar past analyses.",
+              "Test: does the agent's reasoning improve when it has RAG context?",
+              "Save MEMORY_AND_RAG.md: what changed, what improved, what broke."
+            ]
+          },
+          "tasks": [
+            "Buffer memory working across 3 sequential runs",
+            "Stretch: simple RAG with vector store set up",
+            "MEMORY_AND_RAG.md saved"
+          ],
+          "stretchGoals": [
+            "Populate the vector store with 50 real ICP examples from your Week 0 work",
+            "Test whether RAG-enhanced agent is more accurate than baseline agent"
+          ],
+          "completionCriteria": [
+            "Agent passes the 'remember this conversation' test",
+            "You understand the tradeoffs of memory vs stateless"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 26 of 90. Added memory to my ICP agent. It now remembers past analyses and compares against them. This is the difference between 'one-shot tool' and 'ongoing team member'.",
+            "optional": true
+          },
+          "reflectionPrompt": "Memory adds cost, complexity, and potential for the agent to hallucinate. When is memory worth it for a client? When is it over-engineering?",
+          "artifact": "MEMORY_AND_RAG.md + upgraded ICP Fit Agent with memory"
+        },
+        {
+          "dayNumber": 27,
+          "title": "Agent guardrails and evaluation",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first AI agent that does real client work",
+          "hook": "A brilliant agent that occasionally hallucinates wrong data is a liability. In production, you need evaluation (does it work reliably?) and guardrails (what happens when it does not?). Clients will not pay for agents they cannot trust.",
+          "objective": "Add evaluation and guardrails to your agent to make it production-viable.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Design test cases for agent reliability",
+            "Implement guardrails: content filters, fallback paths, human-in-the-loop",
+            "Know when an agent is production-ready vs demo-only"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Write a test plan before you test.",
+            "prompts": [
+              "What does 'wrong' look like for my ICP Fit Agent?",
+              "What are 5 edge cases that would break it? (weird company names, tiny companies, B2C)",
+              "If it goes wrong, who notices and when?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "AI agent evaluation and guardrails",
+              "creator": "Search YouTube or read Anthropic posts",
+              "url": "https://www.youtube.com/results?search_query=AI+agent+evaluation+guardrails+production",
+              "durationMinutes": 30,
+              "keyTimestamps": [
+                "Focus on human-in-the-loop patterns and confidence scoring"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Write AGENT_TESTS.md with 10 test cases: 5 should pass, 5 should fail (or produce low confidence).",
+              "Run agent against all 10 cases. Score actual outputs.",
+              "Identify failure modes.",
+              "Add guardrails: low-confidence threshold routes to 'needs human review' path, output validation checks score is 0-100, fallback to simpler rule-based logic if agent errors.",
+              "Re-run all 10 tests. Verify improved reliability.",
+              "Save AGENT_EVALUATION.md: test results, guardrails added, remaining known weaknesses."
+            ]
+          },
+          "tasks": [
+            "10 test cases defined",
+            "Agent run against all 10",
+            "Guardrails added for at least 2 failure modes",
+            "AGENT_EVALUATION.md saved"
+          ],
+          "stretchGoals": [
+            "Set up a scheduled test run: every day, agent runs all 10 test cases, reports pass rate to you",
+            "Write a client-facing explanation of your agent's reliability: works X% of the time, with these known limits"
+          ],
+          "completionCriteria": [
+            "Agent has written test cases and actual pass/fail scores",
+            "At least 2 guardrails prevent known failure modes",
+            "You could explain its reliability to a client honestly"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 27 of 90. Added evaluation and guardrails to my agent. Most AI automation agencies skip this. It is what separates 'cool demo at a conference' from 'system a client trusts in production'.",
+            "optional": true
+          },
+          "reflectionPrompt": "Before today my agent felt like magic. Now it feels like engineering. Which framing will my clients value more?",
+          "artifact": "AGENT_TESTS.md + AGENT_EVALUATION.md + production-ready agent"
+        },
+        {
+          "dayNumber": 28,
+          "title": "Week 3 retrospective and agent portfolio piece",
+          "phase": "Technical Foundation",
+          "weekMission": "Ship your first AI agent that does real client work",
+          "hook": "End of Technical Foundation phase. You have gone from zero automation knowledge to a production-ready AI agent in 21 days. Today you consolidate and write the most portfolio-shaping content of the program so far.",
+          "objective": "Ship Week 3 to GitHub and publish a substantial recap that positions you as an agent builder, not just a workflow tinkerer.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Have complete AI agent workflow on GitHub with README",
+            "Published a content piece that demonstrates expertise",
+            "Ready to move into portfolio-system building (Weeks 4-6)"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Think big picture before recapping.",
+            "prompts": [
+              "If a client saw my Week 3 work, would they hire me as an agent builder? Why or why not?",
+              "What is still missing that I need to build in Week 4?"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Export ICP Fit Agent workflow JSON to /workflows/week-3/.",
+              "Write /workflows/week-3/README.md: what the agent does, how to import, API keys needed, test cases.",
+              "Write WEEK_3_RECAP.md.",
+              "Phase 1 complete milestone post: 21 days in. Technical foundation done. Here is what I built: [list]. Next: 3 portfolio systems.",
+              "Include a Loom walkthrough of the agent in action (3-5 min).",
+              "Post on LinkedIn with Loom embedded."
+            ]
+          },
+          "tasks": [
+            "/workflows/week-3/ on GitHub",
+            "WEEK_3_RECAP.md written",
+            "Loom walkthrough recorded",
+            "Phase 1 completion post published"
+          ],
+          "stretchGoals": [
+            "Send the Loom directly to 3 people from Day 6 target list",
+            "Update Upwork profile with agent-building skills",
+            "Update OFFER.md tier 3 retainer description now that you can actually build agents"
+          ],
+          "completionCriteria": [
+            "GitHub visibly shows 3 weeks of work",
+            "LinkedIn has a substantial post closing out Phase 1",
+            "You feel confident moving into portfolio systems"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "Phase 1 of 3 complete. 21 days. 3 weeks. n8n + Make + AI agents. All workflows on GitHub. Loom walkthrough of my first agent in this post. Phase 2 starts Monday: building 3 portfolio-ready systems I will sell as products. Live journey at ammar-blueprint.vercel.app",
+            "optional": false
+          },
+          "reflectionPrompt": "21 days ago I could not build a workflow. Today I have a working AI agent. What does this tell me about what else is possible in the next 21 days?",
+          "artifact": "/workflows/week-3/ on GitHub + WEEK_3_RECAP.md + Loom walkthrough + phase 1 post"
+        }
+      ]
+    },
+    {
+      "slug": "week-4-portfolio-system-1",
+      "number": 4,
+      "title": "Portfolio System #1: SDR-in-a-Box",
+      "summary": "Coming soon. Batch 2 of the curriculum.",
+      "theme": "Lead enrichment and qualification",
       "days": []
     }
   ]
