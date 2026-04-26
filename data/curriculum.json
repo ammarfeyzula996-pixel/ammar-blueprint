@@ -1982,8 +1982,1467 @@
       "slug": "week-4-portfolio-system-1",
       "number": 4,
       "title": "Portfolio System #1: SDR-in-a-Box",
-      "summary": "Coming soon. Batch 2 of the curriculum.",
-      "theme": "Lead enrichment and qualification",
+      "summary": "Ship your first sellable product. Combine lead enrichment + AI qualification + outreach generation into one end-to-end system a client could deploy tomorrow. By end of week you have a Loom demo you can send in cold outreach.",
+      "theme": "From workflows to a product",
+      "days": [
+        {
+          "dayNumber": 29,
+          "title": "Design the SDR-in-a-Box system",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a complete lead-to-outreach system worth $2-5K",
+          "hook": "You have the components: enrichment, AI agent, API calls. Today you design the full system on paper. Most builders skip design and end up with a mess of connected workflows. Real consultants design first, build second. A 1-hour design session saves you 10 hours of debugging.",
+          "objective": "Produce a complete system design document for SDR-in-a-Box: inputs, outputs, components, data flow, failure modes.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Design a multi-workflow system on paper before building",
+            "Identify the 5-7 components needed",
+            "Spec the happy path and failure paths",
+            "Price the system based on value delivered"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Think like your ICP before designing.",
+            "prompts": [
+              "If I were a VP Sales at a $5M ARR B2B SaaS company, what is my current lead flow pain in ONE sentence?",
+              "What does success look like for me? (specific metric, e.g. 30% more qualified meetings booked per month)",
+              "What would I refuse to pay for? (e.g. I already have HubSpot, do not sell me another CRM)"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Nick Saraev: AI Lead Qualification Workflow",
+              "creator": "Nick Saraev on n8n",
+              "url": "https://n8n.io/creators/nicksaraev/",
+              "durationMinutes": 25,
+              "keyTimestamps": [
+                "His template for web form to Apollo enrichment to AI qualification to personalized email",
+                "Study the node structure, not the exact prompts"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Create SDR_IN_A_BOX_DESIGN.md in your project.",
+              "Section 1 'What it is': one-sentence product definition.",
+              "Section 2 'Who it is for': copy your ICP, one sentence.",
+              "Section 3 'Inputs': what the client sends in (e.g. Google Sheet of company names, or form submissions).",
+              "Section 4 'Outputs': what the client gets back (enriched leads, qualification scores, drafted outreach).",
+              "Section 5 'Components': list 5-7 sub-workflows you will build (e.g. Enrichment, Scoring, Outreach Generator, Logging, Error Handler).",
+              "Section 6 'Happy path': sketch the flow in plain English. 'Lead comes in via form - enrichment runs - if fit score >70, route to outreach agent - draft email - sent to human review Slack channel.'",
+              "Section 7 'Failure modes': list 5 things that could break and how you handle each.",
+              "Section 8 'Price': anchor at $2,500 setup + $1,500/mo retainer. Write 3 sentences on why this price.",
+              "Review the design. If a client asked 'what am I paying for?' could you answer in 60 seconds?"
+            ]
+          },
+          "tasks": [
+            "SDR_IN_A_BOX_DESIGN.md saved with all 8 sections",
+            "Components list has 5-7 items",
+            "Failure modes list has 5+ items",
+            "Price anchored with reasoning"
+          ],
+          "stretchGoals": [
+            "Draw the system diagram (Excalidraw, Miro, or even paper + photo) and commit to GitHub",
+            "Send the design doc to a SmartClick colleague or former LEORON peer for gut-check feedback"
+          ],
+          "completionCriteria": [
+            "Could hand this design to another builder and they could build it",
+            "Could pitch this system to a founder without opening any tool"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 29 of 90. Designed my first sellable AI automation system on paper today. Price: $2,500 setup + $1,500/mo. Building it this week. What am I missing?",
+            "optional": true
+          },
+          "reflectionPrompt": "Designing before building feels slow. It is not. Which part of the design exposed a gap in my thinking that I would have hit mid-build?",
+          "artifact": "SDR_IN_A_BOX_DESIGN.md"
+        },
+        {
+          "dayNumber": 30,
+          "title": "Build the enrichment engine (v2)",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a complete lead-to-outreach system worth $2-5K",
+          "hook": "Day 13's enrichment was a demo. Today you upgrade it to production: multi-source fallback, data validation, deduplication, and structured output ready for the next stage. This is the first of 5 components. Build it right and the rest goes faster.",
+          "objective": "Ship a production-grade enrichment workflow with fallback sources and clean structured output.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Build multi-source enrichment with primary and fallback",
+            "Validate output structure before passing downstream",
+            "Handle deduplication and malformed inputs",
+            "Log every run for later debugging"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Decide your sources.",
+            "prompts": [
+              "Primary source: Apollo free tier, or Clearbit, or ZoomInfo free endpoint?",
+              "Fallback source: if primary fails, what next? (e.g. web search + AI extraction)",
+              "What fields do I require? (domain, industry, size, LinkedIn URL, primary contact)"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Automate Lead Qualification with n8n",
+              "creator": "Boots Wrapped",
+              "url": "https://boots-wrapped.beehiiv.com/p/how-to-enrich-your-typeform-leads-automatically-no-code-tutorial",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Form to enrichment to CRM flow",
+                "Dropcontact vs Apollo comparison"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "Create a new workflow: 'SDR-Enrichment-v2'.",
+              "Input: webhook trigger that accepts JSON {companyName, optional companyDomain}.",
+              "Step 1: call primary enrichment API. Save response.",
+              "Step 2: validate response. If missing critical fields (domain, industry, size), go to fallback.",
+              "Step 3 (fallback): use Claude with web search tool. Prompt: 'Return JSON with domain, industry, headcount estimate, one-line description for {companyName}.'",
+              "Step 4: deduplicate. Check if domain already exists in a Google Sheet log. If yes, return existing record.",
+              "Step 5: validate output schema. Required fields all present? If no, return structured error.",
+              "Step 6: log every run to Google Sheet with: input, source used, output, timestamp, success/fail.",
+              "Test with 10 companies: 5 well-known, 3 obscure, 2 deliberately malformed inputs.",
+              "Save ENRICHMENT_V2.md with test results and what fails gracefully vs what breaks."
+            ]
+          },
+          "tasks": [
+            "Workflow accepts webhook JSON input",
+            "Primary source wired",
+            "Fallback source wired",
+            "Output schema validated",
+            "Deduplication check works",
+            "Log sheet captures every run",
+            "Tested with 10 inputs, including edge cases"
+          ],
+          "stretchGoals": [
+            "Add LinkedIn URL resolution via Apify or public LinkedIn search",
+            "Add 'confidence score' on the enrichment: how sure the AI is about the data",
+            "Export workflow JSON to /workflows/week-4/ on GitHub"
+          ],
+          "completionCriteria": [
+            "Enrichment handles missing inputs gracefully",
+            "Fallback fires when primary fails",
+            "Every run is logged"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 30 of 90. Production-grade enrichment shipped. Primary + fallback + validation + dedup + logging. This is component 1 of 5 in SDR-in-a-Box.",
+            "optional": true
+          },
+          "reflectionPrompt": "Day 13 version was 45 minutes of work. Today's version took 2+ hours. The difference is production-readiness. Where in my client conversations should I talk about that difference as a pricing lever?",
+          "artifact": "ENRICHMENT_V2.md + working workflow"
+        },
+        {
+          "dayNumber": 31,
+          "title": "Build the ICP scoring component",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a complete lead-to-outreach system worth $2-5K",
+          "hook": "Enrichment tells you WHO the lead is. Scoring tells you whether they matter. A good scoring component saves a client 10 hours per week of human review. Today you ship the component that makes SDR-in-a-Box feel intelligent instead of mechanical.",
+          "objective": "Ship an AI-powered ICP scoring workflow that takes enriched data in, returns a 0-100 fit score with reasoning.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Design a scoring rubric tied to specific ICP criteria",
+            "Implement the rubric as an AI agent prompt",
+            "Force structured JSON output for downstream consumption",
+            "Add confidence thresholds"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Write the rubric before writing the prompt.",
+            "prompts": [
+              "What are 5 hard criteria for ICP fit? (industry, ARR range, geography, tech stack, GTM motion)",
+              "Which 2 are dealbreakers? (score 0 if missing) Which 3 are weighted?",
+              "What does a 100 vs 70 vs 30 look like in examples?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "AI Lead Scoring: What Is It & How To Do It Right 2026",
+              "creator": "Warmly",
+              "url": "https://www.warmly.ai/p/blog/ai-lead-scoring",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Predictive vs rules-based scoring",
+                "Focus on the 'explainability' section"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "Create RUBRIC.md. Write your 5 criteria, weights, and 3 example profiles (100/70/30 score).",
+              "Create new workflow: 'SDR-Scoring-v1'.",
+              "Input: enriched lead data from Day 30's workflow.",
+              "Add Claude Sonnet node with structured system prompt:",
+              "  'You are an ICP fit analyst. Score this lead against the rubric below.",
+              "   Rubric: [paste your 5 criteria with weights].",
+              "   Return ONLY valid JSON: {score: 0-100, breakdown: {criterion1: pts, ...}, reasoning: 2 sentences, confidence: 0-1, dealbreakers: []}'.",
+              "Add Code node to validate the JSON parses correctly.",
+              "Add Router: score >70 and confidence >0.7 = 'qualified', 40-70 = 'nurture', <40 = 'disqualified'.",
+              "Test with 10 enriched leads: 3 strong fits, 4 medium, 3 poor.",
+              "Tune prompt based on mismatches. Re-test.",
+              "Save SCORING_V1.md with rubric, prompt, test results."
+            ]
+          },
+          "tasks": [
+            "RUBRIC.md saved with 5 criteria and examples",
+            "Scoring workflow operational",
+            "JSON output validates consistently",
+            "Router branches on qualified/nurture/disqualified",
+            "Tested on 10 leads with >80% agreement to your human judgment"
+          ],
+          "stretchGoals": [
+            "Add a 'score explanation' email template that gets sent to the client when a lead scores >90",
+            "Build a calibration loop: feed back actual outcomes (did they book a meeting?) to refine the rubric"
+          ],
+          "completionCriteria": [
+            "Scoring agrees with your gut >80% of time",
+            "Reasoning is specific, not generic",
+            "Output is structured and downstream-ready"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 31 of 90. AI scoring component shipped. Not just a number - comes with reasoning, confidence, and dealbreakers. This is what moves from 'AI lead scoring demo' to 'scoring I trust to route my pipeline'.",
+            "optional": true
+          },
+          "reflectionPrompt": "The rubric is the secret. Without it, my scoring is opinion dressed as math. What other subjective decisions in my life would benefit from a written rubric?",
+          "artifact": "RUBRIC.md + SCORING_V1.md + working scoring workflow"
+        },
+        {
+          "dayNumber": 32,
+          "title": "Build the outreach generator",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a complete lead-to-outreach system worth $2-5K",
+          "hook": "This is where SDR-in-a-Box earns its name. Input: qualified lead with enrichment data. Output: 3 personalized outreach drafts (cold email, LinkedIn DM, InMail) that reference specific details about the prospect. Your SmartClick outreach training plus your Claude prompt skills come together today.",
+          "objective": "Ship an outreach generator that produces 3 personalized touchpoints per qualified lead, using the sdr-cold-outreach skill rules.",
+          "estimatedMinutes": 180,
+          "learningOutcome": [
+            "Generate channel-specific outreach from structured data",
+            "Enforce copy rules via prompt (no em dashes, no buzzwords, one CTA)",
+            "Produce drafts ready for human 30-second review",
+            "Save drafts to a review queue, not auto-send"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Bring your copy rules into the prompt.",
+            "prompts": [
+              "What are my hard rules? (no em dashes, no buzzwords, one CTA, no 'I hope this finds you well')",
+              "For each channel (email, LinkedIn DM, InMail), what is the word count sweet spot?",
+              "What makes a SaaS VP Sales actually reply?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Cold outreach copy principles",
+              "creator": "Search Justin Michael or Cognism blog",
+              "url": "https://www.google.com/search?q=cold+email+that+gets+replies+B2B+SaaS+2026",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on specificity and observation-based openers",
+                "Skip generic 'cold email template' content"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 150,
+            "steps": [
+              "Create new workflow: 'SDR-Outreach-v1'.",
+              "Input: qualified lead from Day 31 scoring output.",
+              "Add Claude Sonnet node for email:",
+              "  'You are a B2B SaaS outbound specialist. Write a cold email to {name} at {company}.",
+              "   Context: {enrichment summary}. Their likely pain: {pain from rubric}.",
+              "   Rules: 50-75 words. No em dashes. No buzzwords. One CTA (15-min call).",
+              "   Hook: observation about them, not flattery. Return: {subject, body}.'",
+              "Add second Claude node for LinkedIn DM: 200 chars max, same rules.",
+              "Add third Claude node for InMail: 400 chars max, more formal.",
+              "Add validation Code node: check for em dashes, buzzword list, multiple CTAs. Reject and regenerate if found.",
+              "Save all 3 drafts to Google Sheet 'Outreach Review Queue' with columns: Lead, Channel, Draft, Status (pending review).",
+              "Notify yourself in Slack when 5+ drafts are ready for review.",
+              "Test with 5 qualified leads. Read all 15 drafts. Score them 1-5 for authenticity."
+            ]
+          },
+          "tasks": [
+            "Outreach workflow produces 3 channels per lead",
+            "Copy rules enforced in prompt + validation",
+            "Review queue sheet captures all drafts",
+            "Slack notification fires on new batch",
+            "Tested with 5 leads, 15 drafts reviewed"
+          ],
+          "stretchGoals": [
+            "Add tone variation: 'direct', 'curious', 'contrarian' options",
+            "A/B test: generate 2 versions per channel, pick winner in review",
+            "Add an Approve/Reject button in the sheet that triggers sending via Instantly or HeyReach"
+          ],
+          "completionCriteria": [
+            "Drafts pass the 'does not sound AI-generated' test",
+            "Copy rules enforced 100% of the time",
+            "Human review takes <30 seconds per lead"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 32 of 90. Outreach generator live. 3 channels per qualified lead. Enforces my copy rules: no em dashes, no buzzwords, one CTA. Human reviews in 30 seconds instead of writing from scratch in 10 minutes.",
+            "optional": true
+          },
+          "reflectionPrompt": "My SmartClick training is the secret ingredient in this component. What am I doing at work every day that other AI automation freelancers do NOT have in their skill set? That is my moat.",
+          "artifact": "SDR-Outreach-v1 workflow + Outreach Review Queue sheet"
+        },
+        {
+          "dayNumber": 33,
+          "title": "Connect the components: end-to-end system",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a complete lead-to-outreach system worth $2-5K",
+          "hook": "You have 4 separate workflows. Today you connect them into one system. When this works end-to-end, you have a $2-5K product. When it breaks at an edge, you learn what production-grade really means.",
+          "objective": "Wire all 4 components into a single system that runs lead-in to drafts-out without human intervention.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Use sub-workflows or webhook chaining to connect components",
+            "Pass data between workflows cleanly",
+            "Add system-level error handling across components",
+            "Run end-to-end test with real data"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Sketch the wiring before wiring it.",
+            "prompts": [
+              "Connection 1: Enrichment output to Scoring input - what fields must I pass?",
+              "Connection 2: Scoring output to Outreach input - only if qualified, right?",
+              "Connection 3: Outreach output to Review Queue - same sheet, new rows?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "n8n sub-workflows tutorial",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=n8n+sub+workflow+execute+workflow+tutorial",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on 'Execute Workflow' node pattern"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "Create master workflow: 'SDR-in-a-Box-Master'.",
+              "Trigger: form submission OR webhook (client sends lead).",
+              "Node 1: Execute Workflow - call Enrichment v2, pass lead data.",
+              "Node 2: Check success. If enrichment failed, branch to error handler.",
+              "Node 3: Execute Workflow - call Scoring v1 with enriched data.",
+              "Node 4: Router on score. Qualified (score >70) continues, others log to 'Nurture' or 'Disqualified' sheets.",
+              "Node 5: Execute Workflow - call Outreach v1 for qualified leads.",
+              "Node 6: All outputs write to Review Queue.",
+              "Node 7: Send Slack summary: 'Run complete: X leads in, Y qualified, Z drafts ready.'",
+              "System-level Error Workflow: catches any failure, logs to Error sheet, alerts you.",
+              "Test: push 5 leads through. Verify all paths work.",
+              "Save MASTER_SYSTEM.md with architecture and test results."
+            ]
+          },
+          "tasks": [
+            "Master workflow created",
+            "All 4 sub-workflows wired",
+            "Data passes cleanly between stages",
+            "Error handling at system level",
+            "End-to-end test with 5 leads succeeds",
+            "MASTER_SYSTEM.md saved"
+          ],
+          "stretchGoals": [
+            "Add a 'bulk mode': accept a CSV of 100 leads, process in batches",
+            "Add execution timing: log how long each stage takes, expose bottlenecks",
+            "Export the entire system as a single n8n export (includes sub-workflows)"
+          ],
+          "completionCriteria": [
+            "Client could push 10 leads in and get 10 outreach drafts out",
+            "Every stage logs properly",
+            "One end-to-end failure handled gracefully"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 33 of 90. SDR-in-a-Box runs end-to-end. Lead in - enrichment - scoring - outreach drafts out. 10 leads processed in 4 minutes. What would take my SmartClick team 4 hours manually.",
+            "optional": true
+          },
+          "reflectionPrompt": "System-level thinking is different from component thinking. What broke today that would NOT have broken if I had designed the connections better on Day 29?",
+          "artifact": "SDR-in-a-Box master workflow + MASTER_SYSTEM.md"
+        },
+        {
+          "dayNumber": 34,
+          "title": "Polish, documentation, and Loom demo",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a complete lead-to-outreach system worth $2-5K",
+          "hook": "An unrecorded demo is a private party. Today you turn your system into marketing material. A 5-minute Loom, a clean README, and a price sheet. By end of day you have something you can send to any SaaS founder in 30 seconds.",
+          "objective": "Turn the working system into marketable portfolio material: Loom, README, price sheet.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Record a concise product demo",
+            "Document a system for a client audience, not a builder audience",
+            "Write a one-page price sheet that anchors value"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Prep before recording.",
+            "prompts": [
+              "My 60-second pitch for SDR-in-a-Box in plain words (no jargon)",
+              "The ONE outcome the client gets in 30 days of using it",
+              "The 3 questions a SaaS founder would ask - what are my answers?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "How to record demos that convert (search)",
+              "creator": "Any modern sales demo guide",
+              "url": "https://www.google.com/search?q=saas+demo+video+that+converts+tips+2026",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on the opening 10 seconds and the close",
+                "Avoid 'tour of all features' format"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "Write the demo script on paper first. Structure: 10s pain, 30s system walkthrough, 1m live demo, 30s price, 10s CTA.",
+              "Record Loom. 5 minutes maximum. Show real data (use dummy company names).",
+              "Watch it back. Re-record once. Pick the better take.",
+              "Write /workflows/week-4/README.md: what the system does (client lens), how it works (30,000 foot), what you need to set up, price anchors, case study from your own test data.",
+              "Create PRICE_SHEET.md: one-pager with tier 1 audit $750, tier 2 SDR-in-a-Box setup $2,500-3,500, tier 3 retainer $1,500/mo with 3-month minimum.",
+              "Commit to GitHub. Push.",
+              "Post Loom + README link on LinkedIn. This is your portfolio anchor for the next 56 days."
+            ]
+          },
+          "tasks": [
+            "Loom recorded (5 min or less)",
+            "README.md for week-4 folder written",
+            "PRICE_SHEET.md created",
+            "Committed to GitHub",
+            "Posted publicly"
+          ],
+          "stretchGoals": [
+            "Create a landing page on Carrd or Lovable.dev for SDR-in-a-Box",
+            "Send the Loom + price sheet to 3 founders from Day 6 target list (still not pitching, just showing)",
+            "Submit the Loom to r/SaaS or r/sales for feedback"
+          ],
+          "completionCriteria": [
+            "Loom is sendable",
+            "README would make a founder say 'tell me more'",
+            "You have a real portfolio piece to reference in every outreach"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "Day 34 of 90. SDR-in-a-Box live. 5-minute Loom demo attached. Starts at $2,500. Takes 2 hours to set up for a new client. Who do you know that needs this?",
+            "optional": false
+          },
+          "reflectionPrompt": "My Loom will be watched by people I never meet. What about it signals 'this person is serious' in the first 10 seconds? That is my first impression template for every future system.",
+          "artifact": "Loom demo + week-4 README + PRICE_SHEET.md + LinkedIn post"
+        },
+        {
+          "dayNumber": 35,
+          "title": "Week 4 retrospective",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a complete lead-to-outreach system worth $2-5K",
+          "hook": "First portfolio system done. You went from scattered workflows to a sellable product in 7 days. Today you close the loop: retro, commit, and set up for Week 5's bigger build.",
+          "objective": "Consolidate Week 4 learnings, commit everything, plan Week 5.",
+          "estimatedMinutes": 90,
+          "learningOutcome": [
+            "Honest retrospective on what worked and what did not",
+            "All Week 4 artifacts on GitHub",
+            "Week 5 preview scanned"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Reflect before retrospecting.",
+            "prompts": [
+              "Would I buy SDR-in-a-Box from someone who just finished building it? Why or why not?",
+              "What is the weakest part of the system as it stands?",
+              "What did I learn about building systems, not just workflows?"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Write WEEK_4_RECAP.md: what shipped, what broke, what I know now.",
+              "Update main portfolio README with Portfolio System #1 complete.",
+              "Scan Week 5 preview: Meeting-to-CRM Autopilot.",
+              "Share recap on LinkedIn.",
+              "Update Upwork profile with new capability: AI lead qualification systems."
+            ]
+          },
+          "tasks": [
+            "WEEK_4_RECAP.md written",
+            "Portfolio README updated",
+            "Week 5 preview scanned",
+            "Recap shared publicly",
+            "Upwork profile updated"
+          ],
+          "stretchGoals": [
+            "Draft 3 more DMs to Day 6 targets with SDR-in-a-Box Loom attached",
+            "Send a cold email to 5 new ICP-matched prospects using your own outreach generator as a dog-fooding experiment"
+          ],
+          "completionCriteria": [
+            "Week 4 is fully documented and visible",
+            "You feel Portfolio System #2 is the natural next step"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "Week 4 of 12 done. Portfolio System #1 shipped: SDR-in-a-Box. Full demo on GitHub. Next week: Meeting-to-CRM Autopilot. Follow along at ammar-blueprint.vercel.app",
+            "optional": false
+          },
+          "reflectionPrompt": "Halfway check: would I pay me $2,500 to build SDR-in-a-Box for my company? If yes, when do I start offering it? If no, what is the one thing missing?",
+          "artifact": "WEEK_4_RECAP.md + updated portfolio + public post"
+        }
+      ]
+    },
+    {
+      "slug": "week-5-portfolio-system-2",
+      "number": 5,
+      "title": "Portfolio System #2: Meeting-to-CRM Autopilot",
+      "summary": "Every sales team loses 15 min per meeting to CRM data entry. This system kills that. Meeting ends, transcript gets analyzed, CRM updated with structured notes, follow-up tasks created, summary emailed. Ship in 7 days.",
+      "theme": "Attack a real time-waste that every sales team feels",
+      "days": [
+        {
+          "dayNumber": 36,
+          "title": "Design Meeting-to-CRM Autopilot",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a system that reclaims 10+ hours/week per client",
+          "hook": "Ask any sales team what they hate and CRM data entry is in the top 3. Reps have calls, end the day with 6 meetings worth of notes, and either skip the CRM or spend 60+ minutes catching up. This system makes that problem disappear. Your ICP feels this pain daily. Today you design the solution.",
+          "objective": "Design Meeting-to-CRM Autopilot: inputs from meeting transcription service, outputs to CRM with structured notes, tasks, and follow-up draft.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Design a system that integrates with external SaaS tools (Fireflies, HubSpot, Slack)",
+            "Spec the data transformation: transcript to structured CRM update",
+            "Price the system based on hours-saved value"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Understand the pain before designing.",
+            "prompts": [
+              "A sales rep has 6 meetings on Tuesday. What is their end-of-day CRM catch-up process today?",
+              "Which CRM fields matter most: contact, deal stage, next step, amount, close date?",
+              "What if the transcript is wrong or incomplete - how does the system fail safely?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Fireflies HubSpot integration (native docs)",
+              "creator": "Fireflies",
+              "url": "https://fireflies.ai/integrations/crm/hubspot",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Study what the native integration already does",
+                "Note what it does NOT do - that is where you add value"
+              ]
+            },
+            {
+              "title": "How to Automate Meeting Notes With AI and n8n",
+              "creator": "NextAutomation",
+              "url": "https://www.nextautomation.us/blog/how-to-automate-meeting-notes",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on the 'branching by meeting type' section"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Create MEETING_AUTOPILOT_DESIGN.md.",
+              "Section 1: What it is, one sentence.",
+              "Section 2: Trigger source (Fireflies webhook when transcript is ready).",
+              "Section 3: Data flow: transcript -> AI extraction (key points, next steps, objections, stage signals) -> CRM update -> Slack summary -> draft follow-up email in drafts folder.",
+              "Section 4: Components: Webhook Trigger, Transcript Fetcher, AI Extractor, CRM Updater, Slack Notifier, Email Drafter.",
+              "Section 5: Failure modes: transcript missing, contact not in CRM, AI extraction returns garbage.",
+              "Section 6: Price: Setup $3,500, Retainer $2,000/mo (higher than SDR-in-a-Box because integration complexity).",
+              "Section 7: Time-saved calculation: 15 min/meeting x 6 meetings/day x 20 days = 30 hours/month per rep. At $75/hr loaded cost = $2,250/mo saved per rep. ROI positive at 1 rep."
+            ]
+          },
+          "tasks": [
+            "MEETING_AUTOPILOT_DESIGN.md saved",
+            "Time-saved ROI calculation written",
+            "Failure modes listed",
+            "Price anchored with reasoning"
+          ],
+          "stretchGoals": [
+            "Map the system across 2 CRMs (HubSpot + Pipedrive). Different buyers, same system.",
+            "List 3 SmartClick clients who would pay for this immediately"
+          ],
+          "completionCriteria": [
+            "Design is specific enough to start building tomorrow",
+            "ROI calc makes the price feel cheap"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 36 of 90. Designing Portfolio System #2: Meeting-to-CRM Autopilot. Kills the 30+ hours/month every sales rep loses to CRM data entry. Building this week.",
+            "optional": true
+          },
+          "reflectionPrompt": "I picked a problem my ICP feels every single day. The solution is obvious. The question is: why has nobody built this for them yet? That answer is my wedge.",
+          "artifact": "MEETING_AUTOPILOT_DESIGN.md"
+        },
+        {
+          "dayNumber": 37,
+          "title": "Set up meeting transcription pipeline",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a system that reclaims 10+ hours/week per client",
+          "hook": "Today you set up the inbound: webhook from Fireflies (or equivalent) triggers when a transcript is ready. No AI yet, just plumbing. Boring work, critical foundation.",
+          "objective": "Wire the webhook from a meeting transcription service into n8n and successfully fetch a full transcript.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Set up a Fireflies account (free tier)",
+            "Configure webhook from Fireflies to n8n",
+            "Fetch full transcript via API",
+            "Parse transcript structure (speakers, timestamps)"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Set up accounts before building.",
+            "prompts": [
+              "Sign up for Fireflies free tier (3 meetings/month included).",
+              "Record a 2-minute test meeting with yourself on Google Meet. Let Fireflies join.",
+              "Locate your Fireflies API key in settings."
+            ]
+          },
+          "videos": [
+            {
+              "title": "Fireflies GraphQL API documentation",
+              "creator": "Fireflies Guide",
+              "url": "https://guide.fireflies.ai/",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Focus on: transcripts endpoint, webhooks, authentication"
+              ]
+            },
+            {
+              "title": "AI agent for project management and meetings with Fireflies n8n",
+              "creator": "n8n template",
+              "url": "https://n8n.io/workflows/2683-ai-agent-for-project-management-and-meetings-with-airtable-and-fireflies/",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Study the webhook structure and transcript fetching logic"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "In n8n, create new workflow: 'Meeting-Autopilot-Trigger'.",
+              "Add Webhook Trigger node. Copy its URL.",
+              "In Fireflies settings, configure a webhook to fire when transcript is ready. Paste the n8n URL.",
+              "Test: record a 2-min test meeting. Fireflies should fire the webhook.",
+              "In n8n, inspect the incoming payload. Note structure (meeting_id, link, etc.).",
+              "Add HTTP Request node: GET transcript via Fireflies GraphQL. Pass meeting_id.",
+              "Verify full transcript is returned.",
+              "Add Set node: extract clean structure (speakers, turns, timestamps).",
+              "Save MEETING_PIPELINE.md with: API key setup, webhook config, sample transcript structure."
+            ]
+          },
+          "tasks": [
+            "Fireflies webhook fires correctly",
+            "n8n receives payload",
+            "Full transcript fetched via API",
+            "Transcript parsed into clean structure",
+            "MEETING_PIPELINE.md saved"
+          ],
+          "stretchGoals": [
+            "Set up the same with Otter.ai or Recall.ai as alternative sources",
+            "Add a manual trigger for testing so you do not need a real meeting each time"
+          ],
+          "completionCriteria": [
+            "Record a meeting and within 5 minutes n8n has the full transcript",
+            "You understand the data structure of a transcript"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 37 of 90. Meeting transcription pipeline wired. Fireflies records, webhook fires, n8n has the full transcript 30 seconds after the meeting ends. Next: turning that transcript into a structured CRM update.",
+            "optional": true
+          },
+          "reflectionPrompt": "Plumbing is boring but critical. What about today felt tedious? That tedium is what separates real builders from people who only want to do the 'fun' AI parts.",
+          "artifact": "Meeting trigger workflow + MEETING_PIPELINE.md"
+        },
+        {
+          "dayNumber": 38,
+          "title": "Build the transcript-to-structure AI extractor",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a system that reclaims 10+ hours/week per client",
+          "hook": "Today's Claude prompt is harder than anything in Week 3. The input is 2000-5000 words of messy transcript. The output must be clean structured data: objections raised, next steps agreed, deal amount if discussed, decision-maker identified, meeting sentiment. If the prompt is wrong, the whole system produces garbage.",
+          "objective": "Extract structured meeting data from raw transcript using Claude Sonnet with rigorous prompt engineering.",
+          "estimatedMinutes": 180,
+          "learningOutcome": [
+            "Design prompts for long-context structured extraction",
+            "Use XML tags and few-shot examples for reliability",
+            "Validate extraction against a human-written reference",
+            "Tune iteratively against real transcripts"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Define the output before writing the prompt.",
+            "prompts": [
+              "What 8-10 fields do I want extracted? (e.g. next_steps[], objections[], decision_maker, deal_amount, stage_signal, sentiment, key_quotes)",
+              "For each, what does 'no data' look like? (null, empty array, false)",
+              "What is my validation rubric?"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Anthropic prompt engineering docs: long-form inputs",
+              "creator": "Anthropic",
+              "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on XML tags section",
+                "Chain prompts section"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 150,
+            "steps": [
+              "Create EXTRACTOR_SPEC.md with the 8-10 fields you want and their types.",
+              "In n8n, extend Day 37's workflow. Add Claude Sonnet node after transcript parsing.",
+              "Prompt structure:",
+              "  'You are a sales meeting analyst. Extract structured data from the transcript below.",
+              "   Return ONLY valid JSON matching this schema: [paste schema].",
+              "   Rules: if a field has no evidence in transcript, return null or empty array.",
+              "   Do not invent. Do not infer beyond what was said.",
+              "   <transcript>{transcript text}</transcript>'",
+              "Add Code node to validate JSON parses and schema matches.",
+              "Test with 3 real transcripts (record 3 test meetings with yourself covering 3 scenarios: discovery call, demo, follow-up).",
+              "Write REFERENCE.md: for each of the 3 transcripts, write what a human analyst would extract.",
+              "Compare Claude's extraction to your reference. Measure accuracy per field.",
+              "Iterate prompt 3 times. Track what improved.",
+              "Save EXTRACTOR_V1.md with final prompt, schema, accuracy metrics."
+            ]
+          },
+          "tasks": [
+            "Extractor prompt produces valid JSON 10/10 times",
+            "Accuracy >80% per field vs human reference",
+            "Tested on 3 different meeting types",
+            "EXTRACTOR_V1.md saved"
+          ],
+          "stretchGoals": [
+            "Add a 'confidence' field per extracted value",
+            "Run Haiku vs Sonnet comparison on accuracy and cost",
+            "Chain 2 prompts: first extract, second verify extraction"
+          ],
+          "completionCriteria": [
+            "Extractor output is CRM-ready structured data",
+            "You trust the extraction enough to feed it to HubSpot"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 38 of 90. Transcript-to-structure AI extractor shipped. Takes a 4000-word messy meeting transcript, returns clean JSON with objections, next steps, decision-maker, sentiment. Hardest prompt engineering work of the program so far.",
+            "optional": true
+          },
+          "reflectionPrompt": "Long-context extraction is where AI automation gets real. What other massive text inputs do my ICPs process every day that could be structured the same way?",
+          "artifact": "EXTRACTOR_SPEC.md + REFERENCE.md + EXTRACTOR_V1.md + working workflow"
+        },
+        {
+          "dayNumber": 39,
+          "title": "Push structured data to HubSpot",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a system that reclaims 10+ hours/week per client",
+          "hook": "The extractor produces clean data. Today you push that data into a real CRM. This is where most builders get stuck on contact matching, field mapping, duplicate detection. These are the details that separate consultants from hobbyists.",
+          "objective": "Push extracted meeting data into HubSpot, updating existing contacts or creating new ones, with proper field mapping.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Authenticate with HubSpot API from n8n",
+            "Match meeting participants to existing contacts via email",
+            "Create contacts when not found",
+            "Update deal stage and log meeting note",
+            "Handle duplicate prevention"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Set up HubSpot before building.",
+            "prompts": [
+              "Sign up for HubSpot free CRM (no credit card needed)",
+              "Create 3 test contacts with emails you control (including the one you used in your test meetings)",
+              "Create a test deal tied to one contact",
+              "Generate a HubSpot private app API key"
+            ]
+          },
+          "videos": [
+            {
+              "title": "n8n HubSpot integration tutorial",
+              "creator": "Search YouTube",
+              "url": "https://www.youtube.com/results?search_query=n8n+hubspot+integration+tutorial+2026",
+              "durationMinutes": 25,
+              "keyTimestamps": [
+                "Focus on contact search, update, and deal update"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "Extend Day 38 workflow. Add HubSpot credentials.",
+              "After extractor, add HubSpot Search Contact by email (meeting participants).",
+              "IF found: update with meeting note, next step, and last activity date.",
+              "IF NOT found: create contact with name, email, company inferred from transcript.",
+              "Find or create deal tied to contact. Update deal stage based on stage_signal from extraction.",
+              "Attach meeting note as engagement on the contact and deal.",
+              "Add next-step as a Task in HubSpot, assigned to the deal owner, due date +3 days.",
+              "Test with 3 different meeting scenarios: existing contact, new contact, ambiguous participant.",
+              "Save HUBSPOT_INTEGRATION.md with tested flows and gotchas (there WILL be gotchas - document them)."
+            ]
+          },
+          "tasks": [
+            "HubSpot auth working",
+            "Existing contact case: meeting note + next step logged correctly",
+            "New contact case: contact created, note attached",
+            "Deal stage updated based on AI signal",
+            "Task created with due date",
+            "HUBSPOT_INTEGRATION.md saved"
+          ],
+          "stretchGoals": [
+            "Add Pipedrive integration as alternative",
+            "Build deduplication: if meeting already logged (same ID), do not duplicate",
+            "Handle meetings with 3+ participants gracefully"
+          ],
+          "completionCriteria": [
+            "End-to-end: meeting ends, 2 minutes later HubSpot shows: contact updated, deal updated, task created",
+            "You would trust this to run for a real sales team"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 39 of 90. Meeting ends. 2 minutes later HubSpot knows: who was there, what was discussed, what deal stage is next, what the follow-up task is. Zero rep effort. This is the feature sales teams have been asking for.",
+            "optional": true
+          },
+          "reflectionPrompt": "CRM integration is 80% of the work that sales ops consultants actually do. What did I learn about HubSpot today that would let me charge more for future CRM work?",
+          "artifact": "HubSpot integration workflow + HUBSPOT_INTEGRATION.md"
+        },
+        {
+          "dayNumber": 40,
+          "title": "Slack summary + follow-up email draft",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a system that reclaims 10+ hours/week per client",
+          "hook": "CRM is updated. But the rep is human. They want a quick read before their next call: Slack summary. And a draft follow-up email they can send in 30 seconds. Today you add the human-facing layer.",
+          "objective": "Add Slack summary and auto-drafted follow-up email to the Meeting-to-CRM Autopilot system.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Format AI output for human consumption",
+            "Generate channel-appropriate content (Slack terse, email warm)",
+            "Save drafts to Gmail drafts folder for human review"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Design the human layer.",
+            "prompts": [
+              "What 3 pieces of info does a rep need in Slack within 1 minute of meeting ending?",
+              "What does a good follow-up email look like? Short, warm, one ask.",
+              "Where should drafts live? (Gmail drafts, or Google Doc, or HubSpot sequence?)"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Extend workflow. After HubSpot update, add a Claude node for Slack summary:",
+              "  'Generate a 3-bullet Slack summary for a sales rep who just finished a meeting.",
+              "   Format: bullet 1 key outcome, bullet 2 objection or concern, bullet 3 exact next step with date.",
+              "   <structured_data>{extracted data}</structured_data>'",
+              "Add Slack node to post to the rep's DM or a dedicated channel.",
+              "Add second Claude node for follow-up email draft:",
+              "  'Draft a 75-word follow-up email from the rep to the prospect.",
+              "   Reference one specific thing from the meeting. Ask for the next concrete step.",
+              "   No em dashes. No buzzwords. Return subject + body.'",
+              "Add Gmail node: create draft (not send). Save to rep's drafts folder.",
+              "Test end-to-end: meeting ends, 5 min later Slack has summary, Gmail has draft.",
+              "Save HUMAN_LAYER.md with examples of good vs bad summaries and drafts."
+            ]
+          },
+          "tasks": [
+            "Slack summary posts within 5 min of meeting end",
+            "Format is 3 bullets, specific, action-oriented",
+            "Gmail draft created, ready for rep review",
+            "Draft follows outreach copy rules",
+            "HUMAN_LAYER.md saved"
+          ],
+          "stretchGoals": [
+            "Add tone variation based on deal stage (discovery = curious, demo = reassuring, negotiation = firm)",
+            "Generate 2 email variants per meeting, rep picks winner"
+          ],
+          "completionCriteria": [
+            "Rep could send the drafted email with 1 character change",
+            "Slack summary takes 10 seconds to read"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 40 of 90. Meeting-to-CRM Autopilot now includes: Slack summary in rep's DM, follow-up email drafted to Gmail. Reps save 15 min per meeting. Multiply that by 6 meetings/day and you see why this is a $2K/mo retainer.",
+            "optional": true
+          },
+          "reflectionPrompt": "Humans want to feel in control. AI should do the boring work and surface decisions to humans. Where in my system does AI cross the line from helpful to presumptuous?",
+          "artifact": "Updated workflow + HUMAN_LAYER.md"
+        },
+        {
+          "dayNumber": 41,
+          "title": "End-to-end test, polish, Loom demo",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a system that reclaims 10+ hours/week per client",
+          "hook": "Same Day 34 rhythm: polish the system, document it, record a demo. This one is harder to demo than SDR-in-a-Box because you need a live meeting. Plan the recording carefully.",
+          "objective": "Ship Portfolio System #2 as a polished, Loom-demoed portfolio piece.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Record a compelling demo with live data flow",
+            "Document a multi-integration system",
+            "Update portfolio and pricing"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Plan the demo.",
+            "prompts": [
+              "Script: 10s pain (CRM data entry tax), 30s architecture, 90s live demo (record a meeting on screen, show Slack + HubSpot + Gmail updates in real time), 20s price + CTA.",
+              "Record a test meeting beforehand so you can cut to the transcript appearing.",
+              "Prepare dummy data so you are not showing real customer info."
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "Run end-to-end test with a fresh meeting. Verify all 4 outputs: HubSpot contact, HubSpot deal, Slack summary, Gmail draft.",
+              "Debug anything broken.",
+              "Record Loom: 5-6 min max. Show meeting ending, Slack hitting, HubSpot updating, Gmail draft appearing.",
+              "Write /workflows/week-5/README.md: client-facing explanation, setup requirements, tech stack.",
+              "Update PRICE_SHEET.md: add Meeting-to-CRM Autopilot at Setup $3,500, Retainer $2,000/mo.",
+              "Commit to GitHub.",
+              "Post Loom on LinkedIn with ROI math: 'every rep saves 30+ hrs/month'."
+            ]
+          },
+          "tasks": [
+            "End-to-end test passes",
+            "Loom recorded",
+            "Week-5 README written",
+            "PRICE_SHEET.md updated",
+            "Posted publicly"
+          ],
+          "stretchGoals": [
+            "Send Loom directly to 2 VPs of Sales from Day 6 target list",
+            "Submit as case study to r/sales or RevOps community",
+            "Build a landing page microsite for the system"
+          ],
+          "completionCriteria": [
+            "Second sellable portfolio system live",
+            "Combined with SDR-in-a-Box you now have a pipeline + post-call offering"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 41 of 90. Portfolio System #2 shipped: Meeting-to-CRM Autopilot. Reps save 30+ hours/month. Setup $3,500. Retainer $2,000/mo. Loom demo attached. Who needs this?",
+            "optional": false
+          },
+          "reflectionPrompt": "Two portfolio systems shipped in 2 weeks. At this pace, Week 6's system + sales training in Weeks 7-9 means I could have a client by Day 60. Am I on track for that? What is the first bottleneck I see?",
+          "artifact": "Loom demo + week-5 README + PRICE_SHEET.md v2"
+        },
+        {
+          "dayNumber": 42,
+          "title": "Week 5 retrospective",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship a system that reclaims 10+ hours/week per client",
+          "hook": "Two portfolio systems in the bag. This is halfway through the program in terms of building. Next week is the third and last build system, then you pivot to selling. Today you close out Week 5 clean.",
+          "objective": "Retrospect, commit, plan.",
+          "estimatedMinutes": 90,
+          "learningOutcome": [
+            "Honest retro on what improved from Week 4 to Week 5",
+            "All artifacts public on GitHub",
+            "Week 6 preview done"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Compare Week 4 to Week 5.",
+            "prompts": [
+              "Did I build faster in Week 5 than Week 4? Why or why not?",
+              "Which component was the hardest and why?",
+              "What is my energy level at the start of Week 6?"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "WEEK_5_RECAP.md: what shipped, hardest debug, biggest unlock.",
+              "Update portfolio README with 2 systems live.",
+              "Scan Week 6 preview: Inbound Lead Scorer + Router.",
+              "Share recap on LinkedIn.",
+              "Check Upwork for any job postings matching 'meeting automation' or 'HubSpot integration' and save to a 'future bids' file for Week 8."
+            ]
+          },
+          "tasks": [
+            "WEEK_5_RECAP.md written",
+            "Portfolio README updated",
+            "Week 6 preview scanned",
+            "Recap shared"
+          ],
+          "stretchGoals": [
+            "Write a thread: '2 AI automation systems I built in 2 weeks - here is the blueprint' with architecture diagrams",
+            "Email 5 founders from Day 6 list with BOTH Loom demos"
+          ],
+          "completionCriteria": [
+            "Phase 2 (portfolio build) is 2/3 complete",
+            "Ready for Week 6's final build"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "Week 5 of 12 done. Portfolio System #2 in the bag. 2 sellable systems live. Week 6 up next: Inbound Lead Scorer + Router. Then pivoting from building to selling. Live at ammar-blueprint.vercel.app",
+            "optional": false
+          },
+          "reflectionPrompt": "Two systems down. The gap between 'can I build it' and 'will someone pay for it' is the gap between Week 5 and Week 8. What am I doing this week to shorten that gap?",
+          "artifact": "WEEK_5_RECAP.md + updated portfolio"
+        }
+      ]
+    },
+    {
+      "slug": "week-6-portfolio-system-3",
+      "number": 6,
+      "title": "Portfolio System #3: Inbound Lead Scorer + Router",
+      "summary": "Final portfolio build. Inbound form submission triggers: enrichment, AI scoring, routing to the right rep with calendar link, or to nurture sequence. Closes out Phase 2 with 3 sellable systems + a full Loom library.",
+      "theme": "Real-time speed-to-lead that closes deals",
+      "days": [
+        {
+          "dayNumber": 43,
+          "title": "Design Inbound Lead Scorer + Router",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship the third sellable system and complete Phase 2",
+          "hook": "78% of B2B deals go to the first responder. Most B2B SaaS teams have lead response times >1 hour. Today you design a system that makes that time < 2 minutes. Fast speed-to-lead is the single highest-leverage GTM change most SaaS teams can make. And nobody is building it custom for them in 2026.",
+          "objective": "Design a real-time inbound system: form submission to qualified rep with calendar link in under 2 minutes.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Design a real-time (not batch) automation",
+            "Integrate with calendar and CRM routing",
+            "Understand speed-to-lead as a specific pain worth paying for"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Study the pain.",
+            "prompts": [
+              "Visit 5 B2B SaaS websites and fill out their demo request form. Time how long until you get a meaningful response.",
+              "What is the experience gap between 'auto-reply in 5 seconds' and 'human reply in 2 hours'?",
+              "Which rep on the team should get which lead? (geography, product, deal size)"
+            ]
+          },
+          "videos": [
+            {
+              "title": "2026 B2B Lead Prioritization Playbook",
+              "creator": "SalesWings",
+              "url": "https://www.saleswingsapp.com/inside-sales/how-to-prioritize-high-volume-b2b-leads-2026-playbook/",
+              "durationMinutes": 20,
+              "keyTimestamps": [
+                "Focus on multi-layered scoring and SLA routing"
+              ]
+            },
+            {
+              "title": "Lead Routing in 2026: How to Build Rules That Scale",
+              "creator": "Landbase",
+              "url": "https://www.landbase.com/blog/lead-routing-2026-rules-scale-without-breaking",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Territory, round-robin, and capacity-based routing"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 75,
+            "steps": [
+              "Create INBOUND_ROUTER_DESIGN.md.",
+              "Section 1: What it is (real-time inbound lead handler).",
+              "Section 2: Trigger (web form submission or webhook from Typeform/HubSpot form).",
+              "Section 3: Flow: enrich -> score -> route -> auto-respond with calendar link OR nurture sequence.",
+              "Section 4: Components: Webhook, Enricher (reuse Week 4!), Scorer (tuned for inbound), Router Logic, Calendly/Cal.com booking link generator, Email autoresponder, Slack alert.",
+              "Section 5: Routing rules: enterprise score = AE round-robin, mid-market = SDR, SMB = self-serve nurture.",
+              "Section 6: Failure modes: form data missing required field, enrichment takes too long, no reps available.",
+              "Section 7: Price: Setup $3,500, Retainer $2,500/mo (highest because SLA and calendar integration is operationally demanding)."
+            ]
+          },
+          "tasks": [
+            "INBOUND_ROUTER_DESIGN.md saved with all 7 sections",
+            "Reused components from Week 4 identified",
+            "Routing rules specified",
+            "Price justified"
+          ],
+          "stretchGoals": [
+            "Reach out to a SaaS founder from your target list and ask: 'what is your current demo request response time?'",
+            "Find 3 companies publicly bragging about their speed-to-lead"
+          ],
+          "completionCriteria": [
+            "Design is specific",
+            "You reuse Week 4's enrichment component (nice touch - shows your systems thinking)"
+          ],
+          "publicCommitment": {
+            "platform": "X or LinkedIn",
+            "template": "Day 43 of 90. Designing Portfolio System #3: Inbound Lead Scorer + Router. Form submission to booked meeting in under 2 minutes. Most B2B SaaS teams take hours. This is where deals are won or lost.",
+            "optional": true
+          },
+          "reflectionPrompt": "Reusing Week 4 components for Week 6 means my builds compound. What OTHER parts of my system can become reusable modules I sell across clients?",
+          "artifact": "INBOUND_ROUTER_DESIGN.md"
+        },
+        {
+          "dayNumber": 44,
+          "title": "Real-time enrichment and scoring pipeline",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship the third sellable system and complete Phase 2",
+          "hook": "Today's work feels familiar because you are reusing your Week 4 enrichment and scoring modules. The difference: speed matters. Batch processing is dead. Sub-30-second response is the goal.",
+          "objective": "Wire enrichment + scoring in real-time, <30 second total processing.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Optimize workflow speed",
+            "Use webhooks and sub-workflows for parallelism",
+            "Measure and report processing time"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Set time targets.",
+            "prompts": [
+              "Target: <30s from form submission to routed output. What is my current Week 4 enrichment time?",
+              "Where are the slowest steps? (API calls, AI inference)",
+              "What can run in parallel vs sequentially?"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Create new workflow: 'Inbound-Router-Master'.",
+              "Webhook trigger for form data.",
+              "Execute Workflow: Enrichment v2 (from Week 4).",
+              "Execute Workflow: Scoring v1 (from Week 4) but with inbound-tuned rubric (weighted toward urgency signals: 'looking to buy in 30 days', 'evaluating alternatives').",
+              "Log start and end timestamps in a Google Sheet.",
+              "Test with 5 form submissions. Measure avg processing time.",
+              "If >30s, optimize: use Haiku instead of Sonnet for scoring, cache enrichment by domain for 7 days.",
+              "Save SPEED_OPTIMIZATION.md with before/after metrics."
+            ]
+          },
+          "tasks": [
+            "Real-time pipeline wired",
+            "Avg processing time <30s",
+            "Time metrics logged per run",
+            "SPEED_OPTIMIZATION.md saved"
+          ],
+          "stretchGoals": [
+            "Add parallel enrichment: call 2 APIs simultaneously, use whichever returns first",
+            "Build a tiny dashboard in Google Sheets showing last 20 runs + avg time"
+          ],
+          "completionCriteria": [
+            "Sub-30-second processing consistently",
+            "Cached enrichment reduces repeat-lookup time to <2s"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 44 of 90. Real-time lead processing: form submit to qualified route in 28 seconds. Most SaaS teams take 1-4 hours. Speed is the moat.",
+            "optional": true
+          },
+          "reflectionPrompt": "Optimization is invisible work that makes the difference between 'my system' and 'my system that clients actually trust'. Where else in my life do I under-invest in the last 10% that makes the product feel premium?",
+          "artifact": "Real-time pipeline + SPEED_OPTIMIZATION.md"
+        },
+        {
+          "dayNumber": 45,
+          "title": "Routing logic and rep assignment",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship the third sellable system and complete Phase 2",
+          "hook": "A qualified lead with no assigned rep is still a dead lead. Today you build the routing brain. Round-robin, territory, capacity-aware, with fallback. This is the piece that separates a toy from a production GTM system.",
+          "objective": "Implement rule-based routing with rep assignment logic, territory awareness, and fallback paths.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Design routing rules as data, not code",
+            "Implement round-robin and weighted distribution",
+            "Handle capacity (rep is OOO or over quota)",
+            "Add a fallback path when no rep fits"
+          ],
+          "preWork": {
+            "estimatedMinutes": 10,
+            "instructions": "Rules as data.",
+            "prompts": [
+              "Design a Google Sheet called 'Routing Rules' with columns: rule_id, condition (JSON), target_rep, fallback_rep, active",
+              "Example rules: ARR > $10M and region=US -> Enterprise AE rotation; ARR $2-10M -> Mid-market SDR; ARR < $2M -> nurture"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Extend Day 44 workflow. After scoring, add routing logic.",
+              "Add Code node or chained IF nodes that read the Google Sheet 'Routing Rules' and match the lead.",
+              "Implement round-robin: maintain a 'last assigned' pointer in a Data Store, rotate among reps.",
+              "Check rep capacity: query a simple sheet of 'reps' with columns: rep_id, email, capacity_remaining_today, out_of_office.",
+              "If top-match rep is at capacity or OOO, fall back to next in rule.",
+              "If NO rep fits: route to 'needs human review' Slack channel.",
+              "Test with 20 synthetic leads covering all rules, edge cases, and overflow.",
+              "Save ROUTING_LOGIC.md with rules, test results, one gotcha."
+            ]
+          },
+          "tasks": [
+            "Routing Rules sheet set up",
+            "Round-robin works across 3+ reps",
+            "Capacity check works",
+            "Fallback path tested",
+            "ROUTING_LOGIC.md saved"
+          ],
+          "stretchGoals": [
+            "Add time-zone awareness: route enterprise US leads to US-timezone AEs only during business hours",
+            "Build a 'rep performance' feedback loop: if a rep books the meeting, their weight increases slightly"
+          ],
+          "completionCriteria": [
+            "Routing handles 20 test leads correctly",
+            "No lead ever falls into a black hole (always has a destination)"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 45 of 90. Routing brain shipped. Round-robin + territory + capacity + fallback. Every lead gets routed, never lost. This is why this system commands $2,500/mo retainer vs $500 toys.",
+            "optional": true
+          },
+          "reflectionPrompt": "Rules as data, not code. This means the client can tune their own routing rules without me editing workflows. What else in my system should be configurable data instead of hardcoded logic?",
+          "artifact": "Routing Rules sheet + ROUTING_LOGIC.md + working workflow"
+        },
+        {
+          "dayNumber": 46,
+          "title": "Calendar booking link and auto-responder",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship the third sellable system and complete Phase 2",
+          "hook": "A qualified routed lead with no calendar link is still just a lead. Today you close the loop: generate the right rep's Calendly link, send an auto-response with the link, notify Slack. Under 2 minutes from form fill to 'book time with Sarah' email in their inbox.",
+          "objective": "Complete the inbound system: personalized auto-responder with rep's calendar link + Slack alert to rep.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Integrate with Calendly or Cal.com API",
+            "Personalize auto-responder by rep and lead context",
+            "Alert the assigned rep via Slack with lead context"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Set up calendar.",
+            "prompts": [
+              "Sign up for Calendly or Cal.com free tier for 3 test reps (use yourself + 2 fake identities)",
+              "Each rep gets a personal link (you will store these in the 'reps' sheet)"
+            ]
+          },
+          "videos": [
+            {
+              "title": "Cal.com n8n integration",
+              "creator": "Search",
+              "url": "https://www.youtube.com/results?search_query=n8n+cal.com+calendly+integration",
+              "durationMinutes": 15,
+              "keyTimestamps": [
+                "Focus on pulling rep-specific booking links"
+              ]
+            }
+          ],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Extend workflow. After routing assigns a rep, fetch their Calendly link from the 'reps' sheet.",
+              "Add Claude node for personalized auto-responder:",
+              "  'Write a 60-word email to {lead_name} at {company} from {rep_name}.",
+              "   Reference their form answer about {specific_pain}.",
+              "   Include this calendar link as CTA: {rep_calendar_link}.",
+              "   No buzzwords. Warm but brief.'",
+              "Send via Gmail or SendGrid (use the rep's email as from-address, use SMTP if custom domain).",
+              "Simultaneously post to rep's Slack DM:",
+              "  'New qualified lead: {lead_name} from {company}. Fit score: {score}. Pain: {summary}. Auto-responder sent with your calendar link. Context in HubSpot here: {link}.'",
+              "Test: fill out a form. Verify email arrives in test inbox with calendar link. Verify Slack DM arrives at 'rep'.",
+              "Log total processing time. Target <120s.",
+              "Save AUTORESPONDER.md with examples."
+            ]
+          },
+          "tasks": [
+            "Personalized auto-responder sends successfully",
+            "Calendar link is rep-specific",
+            "Slack DM arrives at assigned rep",
+            "Total processing time <120s",
+            "AUTORESPONDER.md saved"
+          ],
+          "stretchGoals": [
+            "A/B test 2 auto-responder variants, measure click-through to calendar",
+            "Add SMS notification via Twilio for high-urgency leads"
+          ],
+          "completionCriteria": [
+            "Lead fills form, 2 min later has email with rep's calendar link",
+            "Rep knows immediately and has full context"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn",
+            "template": "Day 46 of 90. Inbound Scorer + Router is live end-to-end. Lead fills form, 2 minutes later they have Sarah's calendar link in their inbox with a personalized note. Sarah has full context in Slack. This is what 'speed to lead' actually looks like in 2026.",
+            "optional": true
+          },
+          "reflectionPrompt": "Every piece of today's work was integration: APIs, Slack, email, calendar. Integration is where AI automation ACTUALLY lives in production. How much of my Upwork profile reflects that vs my earlier 'I build AI agents' angle?",
+          "artifact": "Auto-responder + Slack alert + AUTORESPONDER.md"
+        },
+        {
+          "dayNumber": 47,
+          "title": "End-to-end test, polish, Loom demo",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship the third sellable system and complete Phase 2",
+          "hook": "Third system. Same polish rhythm as Day 34 and Day 41. By now this is muscle memory.",
+          "objective": "Ship System #3 as portfolio material with Loom demo.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Record the fastest-feeling demo (speed is the hook)",
+            "Close out the portfolio trilogy"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Plan demo for speed impact.",
+            "prompts": [
+              "Show the stopwatch. 'Form submitted at 0:00. Email with calendar link at 0:00:87.'",
+              "Have a real browser tab open showing the email arriving.",
+              "Script: 10s pain (reps miss hot leads), 30s architecture, 90s LIVE speed demo, 20s price."
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "Full end-to-end test. Verify sub-2-minute processing.",
+              "Record Loom. Include on-screen stopwatch.",
+              "Write /workflows/week-6/README.md.",
+              "Update PRICE_SHEET.md: add Inbound Scorer + Router at Setup $3,500, Retainer $2,500/mo.",
+              "Commit.",
+              "Post on LinkedIn and X with the speed metric as hook: '2 minutes from form to calendar link'."
+            ]
+          },
+          "tasks": [
+            "Loom recorded with stopwatch",
+            "Week-6 README written",
+            "PRICE_SHEET.md final version",
+            "3 systems visible on GitHub",
+            "Post published"
+          ],
+          "stretchGoals": [
+            "Make a 60-second version for social (short attention spans)",
+            "Send all 3 Looms in a single message to 5 founders"
+          ],
+          "completionCriteria": [
+            "Third system live",
+            "Portfolio shows trilogy complete"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "Day 47 of 90. Portfolio System #3 shipped. 2 min from form to calendar. All 3 systems live: SDR-in-a-Box ($2,500), Meeting-to-CRM Autopilot ($3,500), Inbound Scorer + Router ($3,500). Building complete. Selling starts next week.",
+            "optional": false
+          },
+          "reflectionPrompt": "Three systems, each priced $2,500-3,500 setup plus retainer. Total potential ARR from 5 clients: $150K+. This was fiction 47 days ago. What other 'fiction' in my life should I be building toward now?",
+          "artifact": "Loom #3 + week-6 README + PRICE_SHEET.md final"
+        },
+        {
+          "dayNumber": 48,
+          "title": "Phase 2 consolidation: portfolio showcase",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship the third sellable system and complete Phase 2",
+          "hook": "You have 3 systems. 3 Looms. 3 READMEs. You need ONE showcase that ties them together for anyone landing on your profile. Today you build that showcase.",
+          "objective": "Create a portfolio showcase page on ammar-blueprint.vercel.app that displays all 3 systems as a product suite.",
+          "estimatedMinutes": 150,
+          "learningOutcome": [
+            "Present portfolio as a cohesive product suite",
+            "Write one paragraph per system that sells, not describes",
+            "Link Looms and GitHub repos cleanly"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Think packaging.",
+            "prompts": [
+              "How do these 3 systems fit together? (hint: they cover pipeline pre-call, during-call, post-call - the full sales lifecycle)",
+              "What is the headline for the combined offering? 'The B2B SaaS Sales OS' or similar",
+              "What is the bundled price?"
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 120,
+            "steps": [
+              "In your ammar-blueprint Next.js project, add a new page: app/portfolio/page.tsx.",
+              "Copy the pattern from existing pages (ask Claude Code to scaffold).",
+              "Sections: Hero (headline + subheadline + CTA), The Suite (3 cards, one per system), Pricing (individual + bundle), How we work (3-step process), CTA (book a Loom audit).",
+              "For each system card: title, 1-line outcome, 30-sec Loom embed, GitHub link, price.",
+              "Add navigation link from main site to /portfolio.",
+              "Commit, push, verify deployed at ammar-blueprint.vercel.app/portfolio.",
+              "Save PORTFOLIO_PAGE.md with screenshot."
+            ]
+          },
+          "tasks": [
+            "Portfolio page live at ammar-blueprint.vercel.app/portfolio",
+            "All 3 systems displayed with Looms embedded",
+            "Bundle price visible",
+            "CTA present"
+          ],
+          "stretchGoals": [
+            "Add testimonial slot (leave placeholder, fill when you get your first client)",
+            "Add FAQ section: 'What if we already use HubSpot?' 'Can you migrate existing workflows?' 'What is the setup timeline?'",
+            "Add 'About' section with your SmartClick and LEORON experience"
+          ],
+          "completionCriteria": [
+            "Could paste the URL into a LinkedIn DM and have it close a meeting",
+            "Looks professional, not homemade"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "Day 48 of 90. Portfolio showcase live at ammar-blueprint.vercel.app/portfolio. 3 systems as one product suite. Pipeline + meetings + inbound. Full B2B SaaS Sales OS. Built in 6 weeks. Selling starts now.",
+            "optional": false
+          },
+          "reflectionPrompt": "Phase 2 complete. I came into this 48 days ago not knowing n8n. Today I have a portfolio page selling 3 systems for $9,500 bundled. What shifts in my identity between 'SDR at SmartClick' and 'builder with a product suite'?",
+          "artifact": "Live portfolio page + PORTFOLIO_PAGE.md"
+        },
+        {
+          "dayNumber": 49,
+          "title": "Week 6 retro + Phase 2 celebration",
+          "phase": "Portfolio Build",
+          "weekMission": "Ship the third sellable system and complete Phase 2",
+          "hook": "End of Phase 2. You just built and shipped 3 production-grade systems in 21 days. Today is real. Retrospect, publicly mark the milestone, and set up for Phase 3: Sales. The hardest chapter is behind you in some ways (building) and the highest-stakes chapter starts Monday (selling).",
+          "objective": "Consolidate Phase 2, publish a substantial milestone post, prep for Phase 3.",
+          "estimatedMinutes": 120,
+          "learningOutcome": [
+            "Honest Phase 2 retrospective",
+            "Public milestone content that earns respect",
+            "Week 7 preview (sales foundations) scanned"
+          ],
+          "preWork": {
+            "estimatedMinutes": 15,
+            "instructions": "Take stock honestly.",
+            "prompts": [
+              "What can I now do that I absolutely could not 49 days ago?",
+              "Which of the 3 systems would I struggle most to rebuild from scratch? Why?",
+              "Phase 3 is selling. Which of my 3 systems has the clearest buyer? That is the wedge."
+            ]
+          },
+          "videos": [],
+          "guidedPractice": {
+            "estimatedMinutes": 90,
+            "steps": [
+              "Write PHASE_2_RECAP.md: Weeks 4-6 breakdown, systems built, artifacts, honest assessment of what I can/cannot do.",
+              "Update main portfolio README: Phase 1 complete, Phase 2 complete, Phase 3 starting.",
+              "Scan Week 7 preview: sales foundations.",
+              "Write the big milestone post for LinkedIn. Structure: 49 days ago I knew nothing about AI automation. Today I have 3 production systems. Here is what I learned. Here is what is next. Here is who I am looking for.",
+              "Include a summary graphic or screenshot of the portfolio page.",
+              "Post on LinkedIn AND X AND your Upwork bio update."
+            ]
+          },
+          "tasks": [
+            "PHASE_2_RECAP.md written",
+            "Portfolio README updated",
+            "Big milestone post published on LinkedIn + X",
+            "Upwork bio updated with 'Built 3 AI automation systems for B2B SaaS' proof"
+          ],
+          "stretchGoals": [
+            "Send the milestone post directly as DM to 5 founders from Day 6 list",
+            "Submit a case study to IndieHackers, r/SaaS, or Hacker News Show HN",
+            "Record a Phase 2 wrap-up Loom (5 min) summarizing all 3 systems and commit to GitHub"
+          ],
+          "completionCriteria": [
+            "Phase 2 complete, public, and celebrated",
+            "Monday you wake up knowing exactly what Week 7 looks like",
+            "At least 1 DM response rate as a signal for Week 8 outreach"
+          ],
+          "publicCommitment": {
+            "platform": "LinkedIn + X",
+            "template": "49 days ago I was an SDR at SmartClick who had never touched n8n. Today I have shipped 3 production-grade AI automation systems for B2B SaaS. All code on GitHub. All Looms linked. All pricing public. Portfolio: ammar-blueprint.vercel.app/portfolio. Phase 3 starts Monday: Sales. I am looking for: a $2M-20M ARR B2B SaaS company that wants to test the first pilot at 40% off ($2,100) for the case study. Who do you know?",
+            "optional": false
+          },
+          "reflectionPrompt": "I asked 49 days ago: what else is possible? Today I have data. What is the next 49-day bet I could reasonably make, informed by what I now know about what I can actually do?",
+          "artifact": "PHASE_2_RECAP.md + big milestone post + portfolio cross-linked everywhere"
+        }
+      ]
+    },
+    {
+      "slug": "week-7-sales-foundations",
+      "number": 7,
+      "title": "Sales Foundations",
+      "summary": "Coming soon. Batch 3 of the curriculum.",
+      "theme": "From builder to seller",
       "days": []
     }
   ]
